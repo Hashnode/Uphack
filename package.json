@@ -6,6 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-less": "^3.5.0",
+    "gulp-uglifycss": "^1.0.9",
+    "gulp-watch-less": "^1.0.1",
     "next": "^6.0.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
