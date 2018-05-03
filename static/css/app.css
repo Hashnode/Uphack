@@ -1,0 +1,240 @@
+html {
+    font-size: 14px;
+  }
+  body.dark {
+    background: #161616;
+  }
+  body.dark header h1.site-title a {
+    color: #FFF;
+  }
+  body.dark header ul a.active {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  body.dark .single-post .content h3 a {
+    color: #FFF;
+  }
+  body.dark .single-comment {
+    background: rgba(255, 255, 255, 0.04);
+  }
+  body.dark .single-comment .comment-content .comment-data {
+    color: #FFF;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #2962ff;
+  }
+  header {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+  }
+  header h1.site-title {
+    font-size: 1.4rem;
+    margin: 0 2rem 0 0;
+    font-weight: 600;
+  }
+  header h1.site-title a {
+    color: #161616;
+    display: block;
+    letter-spacing: .3px;
+  }
+  header h1.site-title a:hover {
+    color: #2962ff;
+  }
+  header ul {
+    margin: 0;
+    color: #C4C4C4;
+  }
+  header ul a {
+    color: #7F7F7F;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    display: block;
+    padding: .3rem .5rem;
+    font-weight: 500;
+  }
+  header ul a span {
+    display: block;
+  }
+  header ul a i {
+    margin-right: .6rem;
+    display: block;
+    transform: scale(1.2);
+  }
+  header ul a.active {
+    background: #161616;
+    color: #FFF;
+    font-weight: 700;
+  }
+  .single-post {
+    font-size: 1rem;
+  }
+  .single-post button.upvote-btn {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    color: #969696;
+    font-size: 1.1rem;
+    position: relative;
+    top: 3px;
+  }
+  .single-post button.upvote-btn i {
+    display: inline-block;
+    width: 15.41px;
+  }
+  .single-post button.upvote-btn.active {
+    color: #2962ff;
+  }
+  .single-post p {
+    margin: 0;
+  }
+  .single-post .upvote-wrap {
+    margin-right: .7rem;
+  }
+  .single-post .content h3 {
+    font-size: 1.1rem;
+    margin: 0 .3rem 0 0;
+    line-height: 1.4;
+  }
+  .single-post .content h3 a {
+    color: #161616;
+  }
+  .single-post .content span.domain {
+    display: inline-block;
+    color: #ADADAD;
+    font-size: .9rem;
+  }
+  .single-post .content span.domain a {
+    color: #ADADAD;
+  }
+  .single-post .meta {
+    color: #C4C4C4;
+  }
+  .single-post .meta p {
+    font-size: .87rem;
+    color: #8A8A8A;
+  }
+  .single-post .meta p a {
+    color: #8A8A8A;
+  }
+  .single-post .meta p a:hover {
+    color: #2962ff;
+  }
+  .single-post .meta p span.pipe {
+    display: inline-block;
+    margin: 0 .3rem;
+  }
+  .write-comment {
+    max-width: 60%;
+    margin: 1rem 0 3rem;
+  }
+  .write-comment textarea {
+    margin-bottom: .6rem;
+    min-height: 6rem;
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #C4C4C4;
+    position: relative;
+  }
+  .btn {
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    font-weight: 600;
+  }
+  .single-comment {
+    font-size: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.04);
+    margin-bottom: 1rem;
+  }
+  .single-comment button.upvote-btn {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    color: #969696;
+    font-size: 1.1rem;
+    position: relative;
+    top: 3px;
+  }
+  .single-comment button.upvote-btn i {
+    display: inline-block;
+    width: 15.41px;
+  }
+  .single-comment button.upvote-btn.active {
+    color: #2962ff;
+  }
+  .single-comment .upvote-wrap {
+    margin-right: .7rem;
+  }
+  .single-comment .comment-content .meta {
+    color: #C4C4C4;
+    margin: 0 0 .5rem 0;
+  }
+  .single-comment .comment-content .meta p {
+    font-size: .87rem;
+    color: #8A8A8A;
+    margin: 0;
+  }
+  .single-comment .comment-content .meta p a {
+    color: #8A8A8A;
+  }
+  .single-comment .comment-content .meta p a:hover {
+    color: #2962ff;
+  }
+  .single-comment .comment-content .meta p span.pipe {
+    display: inline-block;
+    margin: 0 .3rem;
+  }
+  .single-comment .comment-content .comment-data {
+    font-size: 1rem;
+    color: #161616;
+  }
+  .ask-wrapper {
+    width: 60%;
+  }
+  .ask-wrapper .single-field {
+    margin-bottom: .8rem;
+  }
+  .ask-wrapper input[type="text"],
+  .ask-wrapper textarea {
+    width: 100%;
+    display: block;
+    padding: .5rem;
+    border: 1px solid #C4C4C4;
+    position: relative;
+  }
+  .ask-wrapper textarea {
+    min-height: 6rem;
+  }
+  .ask-wrapper .label {
+    width: 60px;
+    font-size: 1rem;
+    color: #5D5D5D;
+    font-weight: 600;
+  }
+  .ask-wrapper .input-wrapper {
+    width: calc(100% - 60px);
+  }
+  .ask-wrapper .separator {
+    font-weight: 600;
+    color: #C4C4C4;
+    margin-left: 60px;
+    margin-bottom: .8rem;
+  }
+  .ask-wrapper .submit-wrapper {
+    margin-left: 60px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  .ask-wrapper .side-note p {
+    font-size: 1rem;
+    color: #C4C4C4;
+  }
+  

@@ -1,0 +1,275 @@
+@primary-blue: #2962ff;
+@dark: #161616;
+
+html{
+    font-size: 14px;
+}
+
+body{
+    &.dark{
+        background: @dark;
+        header{
+            h1.site-title{
+                a{
+                    color: #FFF;
+                }
+            }
+            ul{
+                a{
+                    &.active{
+                        background: rgba(255,255,255,.2)
+                    }
+                }
+            }
+        }
+        .single-post{
+            .content{
+                h3{
+                    a{
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+        .single-comment{
+            background: rgba(255,255,255,.04);
+            .comment-content{
+                .comment-data{
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}
+
+a{
+    &:hover{
+        text-decoration: none;
+        color: @primary-blue;
+    }
+}
+
+header{
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    h1.site-title{
+        font-size: 1.4rem;
+        margin: 0 2rem 0 0;
+        font-weight: 600;
+        a{
+            color: @dark;
+            display: block;
+            letter-spacing: .3px;
+            &:hover{
+                color: @primary-blue;
+            }
+        }
+    }
+    ul{
+        margin: 0;
+        color: #C4C4C4;
+        a{
+            color: #7F7F7F;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            display: block;
+            padding: .3rem .5rem;
+            font-weight: 500;
+            span{
+                display: block;
+            }
+            i{
+                margin-right: .6rem;
+                display: block;
+                transform: scale(1.2);
+            }
+            &.active{
+                background: @dark;
+                color: #FFF;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.single-post{
+    font-size: 1rem;
+    button.upvote-btn{
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        line-height: 1;
+        color: #969696;
+        font-size: 1.1rem;
+        position: relative;
+        top: 3px;
+        i{
+            display: inline-block;
+            width: 15.41px;
+        }
+        &.active{
+            color: @primary-blue;
+        }
+    }
+    p{
+        margin: 0;
+    }
+    .upvote-wrap{
+        margin-right: .7rem;
+    }
+    .content{
+        h3{
+            font-size: 1.1rem;
+            margin: 0 .3rem 0 0;
+            line-height: 1.4;
+            a{
+                color: @dark;
+            }
+        }
+        span.domain{
+            display: inline-block;
+            color: #ADADAD;
+            font-size: .9rem;
+            a{
+                color: #ADADAD;
+            }
+        }
+    }
+    .meta{
+        color: #C4C4C4;
+        p{
+            font-size: .87rem;
+            color: #8A8A8A;
+            a{
+                color: #8A8A8A;
+                &:hover{
+                    color: @primary-blue;
+                }
+            }
+            span.pipe{
+                display: inline-block;
+                margin: 0 .3rem;
+            }
+        }
+    }
+}
+
+.write-comment{
+    max-width: 60%;
+    margin: 1rem 0 3rem;
+    textarea{
+        margin-bottom: .6rem;
+        min-height: 6rem;
+        display: block;
+        width: 100%;
+        padding: .5rem;
+        border: 1px solid #C4C4C4;
+        position: relative;
+    }
+}
+
+.btn{
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    font-weight: 600;
+}
+
+.single-comment{
+    font-size: 1rem;
+    padding: 1rem;
+    background: rgba(0,0,0,.04);
+    margin-bottom: 1rem;
+    button.upvote-btn{
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        line-height: 1;
+        color: #969696;
+        font-size: 1.1rem;
+        position: relative;
+        top: 3px;
+        i{
+            display: inline-block;
+            width: 15.41px;
+        }
+        &.active{
+            color: @primary-blue;
+        }
+    }
+    .upvote-wrap{
+        margin-right: .7rem;
+    }
+    .comment-content{
+        .meta{
+            color: #C4C4C4;
+            margin: 0 0 .5rem 0;
+            p{
+                font-size: .87rem;
+                color: #8A8A8A;
+                margin: 0;
+                a{
+                    color: #8A8A8A;
+                    &:hover{
+                        color: @primary-blue;
+                    }
+                }
+                span.pipe{
+                    display: inline-block;
+                    margin: 0 .3rem;
+                }
+            }
+        }
+        .comment-data{
+            font-size: 1rem;
+            color: @dark;
+        }
+    }
+}
+
+.ask-wrapper{
+    width: 60%;
+    .single-field{
+        margin-bottom: .8rem;
+    }
+    input[type="text"], textarea{
+        width: 100%;
+        display: block;
+        padding: .5rem;
+        border: 1px solid #C4C4C4;
+        position: relative;
+    }
+    textarea{
+        min-height: 6rem;
+    }
+    .label{
+        width: 60px;
+        font-size: 1rem;
+        color: #5D5D5D;
+        font-weight: 600;
+    }
+    .input-wrapper{
+        width: calc(~"100% - 60px");
+    }
+    .separator{
+        font-weight: 600;
+        color: #C4C4C4;
+        margin-left: 60px;
+        margin-bottom: .8rem;
+    }
+    .submit-wrapper{
+        margin-left: 60px;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    .side-note{
+        p{
+            font-size: 1rem;
+            color: #C4C4C4;
+        }
+    }
+}
