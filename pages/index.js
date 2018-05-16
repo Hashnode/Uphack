@@ -4,6 +4,7 @@ import Nav from '../components/nav'
 import fetch from 'isomorphic-fetch'
 import ajaxUtils from '../utils/ajaxUtils'
 import encoding from '../utils/encoding'
+import PostPreview from '../components/postpreview'
 
 class Index extends React.Component {
 
@@ -22,75 +23,41 @@ class Index extends React.Component {
       const publicKey = encoding.toHexString(keyPair.publicKey).toUpperCase();
 
       const user = await ajaxUtils.loadUser(publicKey);
-      this.setState({ user });
+      this.setState({ user }, () => {
+        this.getUpvoteStatus();
+      });
   }
 
-  extractHostname(url) {
+  getUpvoteStatus = async () => {
+      const status = await ajaxUtils.getUpvoteStatus(this.state.user.publicKey, this.state.posts.map((post) => { return post._id }).join(','));
+      const posts = this.state.posts.slice(0);
+      
+      posts.forEach((post) => {
+        if (status[post._id]) {
+          post.upvotedByCurrentUser = true;
+        }
+      });
+      
+      this.setState({ posts: posts });
+  }
 
-    if (!url) {
-      return "hashnode.com";
+  upvoteCallback = (postId, status) => {
+    const posts = this.state.posts.slice(0);
+    for (let i=0; i < posts.length;i++) {
+      if (posts[i]._id === postId) {
+        posts[i].upvotedByCurrentUser = status;
+        posts[i].upvotes += (status ? 1 : -1);
+        break;
+      }
     }
-
-    var hostname;
-    //find & remove protocol (http, ftp, etc.) and get hostname
-
-    if (url.indexOf("://") > -1) {
-        hostname = url.split('/')[2];
-    }
-    else {
-        hostname = url.split('/')[0];
-    }
-
-    //find & remove port number
-    hostname = hostname.split(':')[0];
-    //find & remove "?"
-    hostname = hostname.split('?')[0];
-
-    return hostname;
+    this.setState({ posts: posts });
   }
 
   render() {
 
     const posts = this.state.posts.map((post) => {
       return (
-        <div className="single-post" key={post._id}>
-            <div className="d-flex flex-row align-items-top">
-              <div className="upvote-wrap">
-                <button className="upvote-btn"><i className="mdi-arrow-outline-up"></i></button>
-              </div>
-              <div className="content">
-                <div className="title d-flex flex-row align-items-end">
-                  <h3><a href={post.url} target="_blank">{post.title}</a></h3>
-                  <span className="domain">(<a href={post.url} target="_blank">{this.extractHostname(post.url)}</a>)</span>
-                </div>
-                <div className="meta">
-                  <ul className="list-inline">
-                    <li className="list-inline-item">
-                      <p>$22.3 <span className="pipe">|</span> 28 points</p>
-                    </li>
-                    <li className="list-inline-item">
-                      <p>by <a href="#">{post.author || 'Bot'}</a></p>
-                    </li>
-                    <li className="list-inline-item">
-                      <p><a href="#">1 hour ago</a></p>
-                    </li>
-                    <li className="list-inline-item">
-                      |
-                                  </li>
-                    <li className="list-inline-item">
-                      <p><a href="#">flag</a></p>
-                    </li>
-                    <li className="list-inline-item">
-                      <p><a href="#">save</a></p>
-                    </li>
-                    <li className="list-inline-item">
-                      <p><a href="#">discuss</a></p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-        </div>
+        <PostPreview post={post} user={this.state.user} key={post._id} upvoteCallback={this.upvoteCallback} />
       )
     });
 

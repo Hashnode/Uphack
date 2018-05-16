@@ -6,6 +6,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "bson": "^2.0.6",
     "express": "^4.16.3",
     "gulp": "^3.9.1",
     "gulp-debug": "^4.0.0",
@@ -13,6 +16,8 @@
     "gulp-uglifycss": "^1.0.9",
     "gulp-watch-less": "^1.0.1",
     "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1",
     "mongodb": "^3.0.7",
     "next": "^6.0.0",
     "react": "^16.3.2",

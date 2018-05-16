@@ -31,21 +31,21 @@ class Nav extends React.Component {
                                 <li className="list-inline-item">
                                     <a href="/">New</a>
                                 </li>
-                                <li className="list-inline-item">
+                                {/* <li className="list-inline-item">
                                     <a href="/">Comments</a>
-                                </li>
+                                </li> */}
                                 <li className="list-inline-item">
                                     <a href="/">Show</a>
                                 </li>
                                 <li className="list-inline-item">
                                     <a href="/">Ask</a>
                                 </li>
-                                <li className="list-inline-item">
+                                {/* <li className="list-inline-item">
                                     <a href="/">Saved</a>
-                                </li>
-                                <li className="list-inline-item">
+                                </li> */}
+                                {/* <li className="list-inline-item">
                                     <a href="/">Jobs</a>
-                                </li>
+                                </li> */}
                                 <li className="list-inline-item">
                                     |
                                 </li>

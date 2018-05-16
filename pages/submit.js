@@ -4,6 +4,7 @@ import Nav from '../components/nav'
 import ajaxUtils from '../utils/ajaxUtils'
 import encoding from '../utils/encoding'
 import makeRPC from '../utils/rpcUtils'
+import bson from 'bson'
 
 class Submit extends React.Component {
     constructor(props, context) {
@@ -24,11 +25,14 @@ class Submit extends React.Component {
               text = this.text.value;
 
         const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
-        const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);      
+        const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);
+
+        const id = new bson.ObjectID().toString();
 
         let txBody = { 
             type: "createPost",
             entity: {
+                id: id,
                 title: title,
                 url: url,
                 text: text,

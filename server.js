@@ -1,8 +1,10 @@
 const express = require('express');
 const next = require('next');
 const site = require('./routes/site.routes');
+const rpc = require('./routes/rpc.routes');
 const { parse } = require('url');
 const dbUtil = require('./db');
+const bodyParser = require('body-parser');
 
 const dev = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 3000;
@@ -18,7 +20,10 @@ const routes = getRoutes();
 app.prepare().then(() => {
   const server = express();
 
+  server.use(bodyParser.urlencoded({ extended: false }));
+  server.use(bodyParser.json());
   server.use(site);
+  server.use(rpc);
 
   server.get('*', (req, res) => {
     const parsedUrl = parse(req.url, true);

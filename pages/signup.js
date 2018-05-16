@@ -3,6 +3,7 @@ import React from 'react'
 import Nav from '../components/nav'
 import encoding from '../utils/encoding'
 import makeRPC from '../utils/rpcUtils'
+import bson from 'bson'
 
 class Signup extends React.Component {
     constructor(props, context) {
@@ -23,11 +24,13 @@ class Signup extends React.Component {
         let username = this.username.value,
             name = this.name.value,
             secret = encoding.hex2ab(localStorage.getItem('hashnewsKey')),
-            publicKey = nacl.util.encodeBase64(encoding.hex2ab(this.publicKey.value)); 
+            publicKey = nacl.util.encodeBase64(encoding.hex2ab(this.publicKey.value)),
+            id = new bson.ObjectID().toString();
         
         let txBody = { 
             type: "createUser",
             entity: {
+                id: id,
                 username: username,
                 name: name,
                 publicKey: this.publicKey.value

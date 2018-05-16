@@ -28,7 +28,6 @@ export default class Hashnews extends Document {
             <script type="text/javascript" src="/static/js/encoding.js"></script>
             <script type="text/javascript" src="/static/js/nacl.min.js"></script>
             <script type="text/javascript" src="/static/js/nacl-util.min.js"></script>
-            <script type="text/javascript" src="/static/js/browser-request.js"></script>
             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>
             <NextScript />
