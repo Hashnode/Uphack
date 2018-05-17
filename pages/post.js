@@ -72,6 +72,11 @@ class Post extends React.Component {
         this.setState({ post: post });
     }
 
+    newCommentCallback = (comment) => {
+        this.state.post.comments.unshift(comment);
+        this.setState({ post: this.state.post });
+    }
+
     render() {
         const post = this.state.post;
         return (
@@ -128,7 +133,7 @@ class Post extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <WriteComment post={this.state.post} />
+                        <WriteComment post={this.state.post} user={this.state.user} newCommentCallback={this.newCommentCallback} />
                         <CommentList post={this.state.post} />
                     </div>
                 </div>

@@ -106,7 +106,14 @@ router.route('/ajax/post').get((req, res) => {
             });
         }, function(cb) {
             db.collection('comments').find({ postID: ObjectId(id) }).toArray(function(err, comments){
-                cb(null, comments);
+                async.map(comments, (comment, callback) => {
+                    db.collection('users').findOne({ _id: comment.author }, function(err, user){
+                        comment.author = user;
+                        callback(null, comment);
+                    });
+                }, (err, result) => {
+                    cb(null, result);
+                });
             });
         }
     ], function(err, result){
@@ -122,7 +129,10 @@ router.route('/ajax/comment').get((req, res) => {
     const id = req.query.id;
 
     db.collection('comments').findOne({ _id: ObjectId(id) }, function(err, comment){
-        res.json({comment: comment});
+        db.collection('users').findOne({ _id: comment.author }, function(err, user){
+            comment.author = user;
+            res.json({comment: comment});
+        });
     });
 });
 

@@ -13,17 +13,26 @@ class WriteComment extends React.Component {
         const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
         const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);
         const id = new bson.ObjectID().toString();
+        const content = this.content.value;
 
         let txBody = { 
             type: "createComment",
             entity: {
                 id: id,
                 postId: this.props.post._id,
-                content: this.content.value
+                content: content
             }
         }
 
-        makeRPC(txBody, publicKey, secret);
+        makeRPC(txBody, publicKey, secret, () => {
+            this.props.newCommentCallback({
+                _id: id,
+                postID: this.props.post._id,
+                content: content,
+                date: new Date(),
+                author: this.props.user
+            });
+        });
 
         this.content.value = '';
     }

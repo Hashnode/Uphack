@@ -20,7 +20,7 @@ class Comment extends React.Component {
                     <div className="comment-content">
                         <ul className="list-inline meta">
                             <li className="list-inline-item">
-                                <p><a href="#">fazlerocks</a></p>
+                                <p><a href="#">{comment.author.username}</a></p>
                             </li>
                             <li className="list-inline-item">
                                 <p>15 points</p>

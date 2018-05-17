@@ -5,6 +5,7 @@ import bson from 'bson'
 import Nav from '../components/nav'
 import ajaxUtils from '../utils/ajaxUtils'
 import WriteComment from '../components/writecomment'
+import moment from 'moment'
 
 class CommentReply extends React.Component {
 
@@ -52,15 +53,15 @@ class CommentReply extends React.Component {
                                                 <p>19 points</p>
                                             </li>
                                             <li className="list-inline-item">
-                                                <p>by <a href="#">fazlerocks</a>
+                                                <p>by <a href="#">{comment.author.username}</a>
                                                 </p>
                                             </li>
                                             <li className="list-inline-item">
                                                 <p>
-                                                    <a href="#">1 hour ago</a>
+                                                    <a href="#">{moment(comment.date).fromNow()}</a>
                                                 </p>
                                             </li>
-                                            <li className="list-inline-item">
+                                            {/* <li className="list-inline-item">
                                                 |
                                             </li>
                                             <li className="list-inline-item">
@@ -72,12 +73,7 @@ class CommentReply extends React.Component {
                                                 <p>
                                                     <a href="#">save</a>
                                                 </p>
-                                            </li>
-                                            <li className="list-inline-item">
-                                                <p>
-                                                    <a href="#">35 comments</a>
-                                                </p>
-                                            </li>
+                                            </li> */}
                                         </ul>
                                     </div>
                                 </div>
