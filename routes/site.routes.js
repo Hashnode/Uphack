@@ -39,8 +39,19 @@ router.route('/ajax/fetch-user').get((req, res) => {
 
 router.route('/ajax/get-posts').get((req, res) => {
     const db = dbUtil.getDB();
+    const type = req.query.type;
+    const sortBy = req.query.sortBy || 'score';
 
-    db.collection('posts').find({}).sort({ _id: -1}).toArray(function(err, posts){
+    const searchConfig = {};
+    const sortConfig = {};
+
+    if (type) {
+        searchConfig[type] = true;
+    }
+
+    sortConfig[sortBy] = -1;
+
+    db.collection('posts').find(searchConfig).sort(sortConfig).toArray(function(err, posts){
         async.map(posts, (post, cb) => {
             db.collection('users').findOne({ _id: post.author }, function(err, user){
                 post.author = user;

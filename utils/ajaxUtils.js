@@ -4,8 +4,23 @@ import getConfig from 'next/config'
 const { publicRuntimeConfig } = getConfig()
 
 export default {
-    loadPosts: async () => {
-        const response = await fetch(publicRuntimeConfig.baseUrl + '/ajax/get-posts', {
+    loadPosts: async (path) => {
+        let url = publicRuntimeConfig.baseUrl + '/ajax/get-posts';
+
+        if (path === '/') {
+            url += '?sortBy=score';
+        }
+        else if (path === '/newest') {
+          url += '?sortBy=date';
+        }
+        else if (path === '/show') {
+          url += '?type=showHN';
+        }
+        else if (path === '/ask') {
+          url += '?type=askHN';
+        }
+        
+        const response = await fetch(url, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json'

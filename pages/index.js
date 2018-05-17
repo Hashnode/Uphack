@@ -8,9 +8,9 @@ import PostPreview from '../components/postpreview'
 
 class Index extends React.Component {
 
-  static async getInitialProps() {
-    const posts = await ajaxUtils.loadPosts();
-    return { posts: posts };
+  static async getInitialProps({ req }) {
+    const posts = await ajaxUtils.loadPosts(req.path);
+    return { posts: posts, path: req.path };
   }
   
   constructor(props, context) {
@@ -63,7 +63,7 @@ class Index extends React.Component {
 
     return (
       <div>
-        <Nav user={this.state.user} />
+        <Nav user={this.state.user} path={this.props.path} />
         <div className="post-list">
           <div className="container">
             {posts}

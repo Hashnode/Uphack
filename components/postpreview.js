@@ -43,7 +43,7 @@ class PostPreview extends React.Component {
                     <div className="content">
                         <div className="title d-flex flex-row align-items-end">
                             <h3><a href={post.url} target="_blank">{post.title}</a></h3>
-                            <span className="domain">(<a href={post.url} target="_blank">{this.extractHostname(post.url)}</a>)</span>
+                            {post.url && <span className="domain">(<a href={post.url} target="_blank">{this.extractHostname(post.url)}</a>)</span>}
                         </div>
                         <div className="meta">
                             <ul className="list-inline">
