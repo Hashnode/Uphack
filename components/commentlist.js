@@ -13,7 +13,7 @@ class CommentList extends React.Component {
     render() {
         const comments = this.props.post.comments.map((comment) => {
             return (
-                <Comment comment={comment} key={comment._id} />
+                <Comment key={comment._id} comment={comment} user={this.props.user} upvoteCallback={this.props.upvoteCallback} />
             )
         });
 

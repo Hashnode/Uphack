@@ -22,11 +22,18 @@ class Post extends React.Component {
     }
 
     async componentDidMount() {
-        const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
+        const hashnewsKey = localStorage.getItem('hashnewsKey');
+      
+        if (!hashnewsKey) {
+            return;
+        }
+
+        const secret = encoding.hex2ab(hashnewsKey);
         const publicKey = encoding.toHexString(nacl.sign.keyPair.fromSecretKey(secret).publicKey).toUpperCase();
         const user = await ajaxUtils.loadUser(publicKey);
         this.setState({ user }, () => {
-            this.getUpvoteStatus();
+            this.getPostUpvoteStatus();
+            this.getCommentUpvoteStatus();
         });
     }
 
@@ -61,7 +68,28 @@ class Post extends React.Component {
         this.setState({ post: post });
     }
 
-    getUpvoteStatus = async () => {
+    commentUpvoteCallback = (commentId, status) => {
+        const post = Object.assign({}, this.state.post);
+
+        function setUpvoteStatus(comments) {
+            for (let i=0;i<comments.length;i++) {
+                if (comments[i]._id === commentId) {
+                    comments[i].upvotedByCurrentUser = status;
+                    comments[i].upvotes += (status ? 1 : -1);
+                    break;
+                }
+                
+                if (Array.isArray(comments[i].comments)) {
+                    setUpvoteStatus(comments[i].comments);
+                }
+            }
+        }
+
+        setUpvoteStatus(post.comments);
+        this.setState({ post: post });
+    }
+
+    getPostUpvoteStatus = async () => {
         const status = await ajaxUtils.getUpvoteStatus(this.state.user.publicKey, this.state.post._id);
         const post = Object.assign({}, this.state.post);
         
@@ -70,6 +98,36 @@ class Post extends React.Component {
         }
         
         this.setState({ post: post });
+    }
+
+    getCommentUpvoteStatus = async () => {
+        const status = await ajaxUtils.getCommentUpvoteStatus(this.state.user.publicKey, this.flattenComments(this.state.post.comments).map((comment) => { return comment._id }).join(','));
+        const post = Object.assign({}, this.state.post);
+
+        function setUpvoteStatus(comments) {
+            comments.forEach((comment) => {
+                if (status[comment._id]) {
+                    comment.upvotedByCurrentUser = true;
+                }
+                if (Array.isArray(comment.comments)) {
+                    setUpvoteStatus(comment.comments);
+                }
+            });
+        }
+
+        setUpvoteStatus(post.comments);
+        this.setState({ post: post });
+    }
+
+    flattenComments = (comments) => {
+        let result = [];
+        comments.forEach((comment) => {
+            result.push(comment);
+            if (Array.isArray(comment.comments)) {
+                result = result.concat(this.flattenComments(comment.comments));
+            }
+        });
+        return result;
     }
 
     newCommentCallback = (comment) => {
@@ -134,7 +192,7 @@ class Post extends React.Component {
                             </div>
                         </div>
                         <WriteComment post={this.state.post} user={this.state.user} newCommentCallback={this.newCommentCallback} />
-                        <CommentList post={this.state.post} />
+                        <CommentList post={this.state.post} user={this.state.user} upvoteCallback={this.commentUpvoteCallback} />
                     </div>
                 </div>
             </div>

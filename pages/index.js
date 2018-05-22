@@ -19,7 +19,13 @@ class Index extends React.Component {
   }
 
   async componentDidMount() {
-      const keyPair = nacl.sign.keyPair.fromSecretKey(encoding.hex2ab(localStorage.getItem('hashnewsKey')));
+      const hashnewsKey = localStorage.getItem('hashnewsKey');
+      
+      if (!hashnewsKey) {
+        return;
+      }
+
+      const keyPair = nacl.sign.keyPair.fromSecretKey(encoding.hex2ab(hashnewsKey));
       const publicKey = encoding.toHexString(keyPair.publicKey).toUpperCase();
 
       const user = await ajaxUtils.loadUser(publicKey);

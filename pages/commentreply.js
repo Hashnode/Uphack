@@ -21,12 +21,17 @@ class CommentReply extends React.Component {
     }
 
     async componentDidMount() {
-        const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
+
+        const hashnewsKey = localStorage.getItem('hashnewsKey');
+      
+        if (!hashnewsKey) {
+            return;
+        }
+        
+        const secret = encoding.hex2ab(hashnewsKey);
         const publicKey = encoding.toHexString(nacl.sign.keyPair.fromSecretKey(secret).publicKey).toUpperCase();
         const user = await ajaxUtils.loadUser(publicKey);
-        this.setState({ user }, () => {
-            //this.getUpvoteStatus();
-        });
+        this.setState({ user });
     }
 
     render() {
@@ -50,7 +55,7 @@ class CommentReply extends React.Component {
                                     <div className="meta">
                                         <ul className="list-inline">
                                             <li className="list-inline-item">
-                                                <p>19 points</p>
+                                                <p>{comment.upvotes} points</p>
                                             </li>
                                             <li className="list-inline-item">
                                                 <p>by <a href="#">{comment.author.username}</a>

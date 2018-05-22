@@ -1,6 +1,7 @@
 import React from 'react'
 import makeRPC from '../utils/rpcUtils'
 import encoding from '../utils/encoding'
+import CommentUpvote from '../components/commentupvote'
 
 class Comment extends React.Component {
     constructor(props, context) {
@@ -8,32 +9,30 @@ class Comment extends React.Component {
         this.state = {};
     }
 
-    renderCommentRecursively = (comment) => {
+    renderCommentRecursively = (comment, user) => {
         return (
             <div className="single-comment" key={comment._id}>
                 <div className="d-flex flex-row align-items-top">
                     <div className="upvote-wrap">
-                        <button className="upvote-btn">
-                            <i className="mdi-arrow-outline-up"></i>
-                        </button>
+                        <CommentUpvote comment={comment} user={user} upvoteCallback={this.props.upvoteCallback} />
                     </div>
                     <div className="comment-content">
                         <ul className="list-inline meta">
                             <li className="list-inline-item">
                                 <p><a href="#">{comment.author.username}</a></p>
                             </li>
-                            <li className="list-inline-item">
-                                <p>15 points</p>
-                            </li>
-                            <li className="list-inline-item">
+                            {comment.upvotes > 0 && <li className="list-inline-item">
+                                <p>{comment.upvotes} point{comment.upvotes > 1 ? 's' : ''}</p>
+                            </li>}
+                            {/* <li className="list-inline-item">
                                 <p><a href="#">[-]</a></p>
-                            </li>
+                            </li> */}
                         </ul>
                         <div className="comment-data">
                             <p>{comment.content}</p>
                             <p><a href={"/comment-reply?comment=" + comment._id}>reply</a></p>
                         </div>
-                        {comment.comments && comment.comments.map((subComment) => { return this.renderCommentRecursively(subComment) })}
+                        {comment.comments && comment.comments.map((subComment) => { return this.renderCommentRecursively(subComment, user) })}
                     </div>
                 </div>
             </div>
@@ -42,9 +41,10 @@ class Comment extends React.Component {
 
     render() {
         const comment = this.props.comment;
+        const user = this.props.user;
         return (
             <div>
-                {this.renderCommentRecursively(comment)}
+                {this.renderCommentRecursively(comment, user)}
             </div>
         )
     }

@@ -55,6 +55,18 @@ export default {
       const data = await response.json();
       return data.status;
     },
+    getCommentUpvoteStatus: async (publicKey, commentIds) => {
+      const response = await fetch(publicRuntimeConfig.baseUrl + '/ajax/get-comment-upvote-status?pk=' + publicKey + '&commentIds=' + commentIds, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin'
+      });
+  
+      const data = await response.json();
+      return data.status;
+    },
     getPost: async (id) => {
       const response = await fetch(publicRuntimeConfig.baseUrl + '/ajax/post?id=' + id, {
         method: 'GET',

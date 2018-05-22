@@ -30,7 +30,8 @@ class WriteComment extends React.Component {
                 postID: this.props.post._id,
                 content: content,
                 date: new Date(),
-                author: this.props.user
+                author: this.props.user,
+                upvotedByCurrentUser: true
             });
         });
 

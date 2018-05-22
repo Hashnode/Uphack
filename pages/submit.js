@@ -13,7 +13,12 @@ class Submit extends React.Component {
     }
 
     async componentDidMount() {
-        const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
+        const hashnewsKey = localStorage.getItem('hashnewsKey');
+      
+        if (!hashnewsKey) {
+            return;
+        }
+        const secret = encoding.hex2ab(hashnewsKey);
         const publicKey = encoding.toHexString(nacl.sign.keyPair.fromSecretKey(secret).publicKey).toUpperCase();
         const user = await ajaxUtils.loadUser(publicKey);
         this.setState({ user });
@@ -41,7 +46,7 @@ class Submit extends React.Component {
         }
 
         makeRPC(txBody, publicKey, secret, function(){
-            window.location.href = '/';
+            window.location.href = '/post?id=' + id;
         });
     }
 

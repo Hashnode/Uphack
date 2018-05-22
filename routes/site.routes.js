@@ -119,6 +119,11 @@ router.route('/ajax/post').get((req, res) => {
     ], function(err, result){
         const post = result[0];
         const comments = unflatten(result[1]);
+
+        comments.sort((c1, c2) => {
+            return c2.score - c1.score;
+        });
+
         post.comments = comments;
         res.json({ post: post });
     });
@@ -132,6 +137,35 @@ router.route('/ajax/comment').get((req, res) => {
         db.collection('users').findOne({ _id: comment.author }, function(err, user){
             comment.author = user;
             res.json({comment: comment});
+        });
+    });
+});
+
+router.route('/ajax/get-comment-upvote-status').get((req, res) => {
+    const db = dbUtil.getDB();
+    const publicKey = req.query.pk;
+
+    if (!req.query.commentIds) {
+        return res.json({ status: {} });
+    }
+
+    const commentIds = req.query.commentIds.split(',');
+
+    if (commentIds.length === 0) {
+        return res.json({ status: {} });
+    }
+
+    db.collection('users').findOne({publicKey: publicKey}, function(err, user){
+        const status = {};
+        async.each(commentIds, (commentId, cb) => {
+            db.collection('usercommentvotes').find({ userID: ObjectId(user._id), commentID: ObjectId(commentId) }).count(function(err, count){
+                if (count > 0) {
+                    status[commentId] = true;
+                }
+                cb();
+            });
+        }, () => {
+            res.json({ status: status });
         });
     });
 });
