@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
+const config = require('../config');
 
 router.route('/rpc').post((req, res) => {
     const base64Data = req.body.base64Data;
@@ -11,7 +12,7 @@ router.route('/rpc').post((req, res) => {
     }
 
     let options = {
-        url: 'http://localhost:46657',
+        url: config.rpcUrl,
         method: 'POST',
         headers: headers,
         json: true,
