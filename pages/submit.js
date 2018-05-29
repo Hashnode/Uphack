@@ -5,6 +5,7 @@ import ajaxUtils from '../utils/ajaxUtils'
 import encoding from '../utils/encoding'
 import makeRPC from '../utils/rpcUtils'
 import bson from 'bson'
+import isUrl from 'is-url'
 
 class Submit extends React.Component {
     constructor(props, context) {
@@ -28,6 +29,14 @@ class Submit extends React.Component {
         const title = this.title.value, 
               url = this.url.value,
               text = this.text.value;
+
+        if (!title) {
+            return;
+        }
+
+        if (url && !isUrl(url)) {
+            return;
+        }
 
         const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
         const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);
