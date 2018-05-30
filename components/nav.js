@@ -22,11 +22,11 @@ class Nav extends React.Component {
                     <div className="d-flex flex-row justify-content-between align-items-center">
                         <div className="d-flex flex-row align-items-center">
                             <h1 className="site-title">
-                                <a href="/">Uphack</a>
+                                <a href="/"><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1527681177561/SJGoeM3Jm.png"/></a>
                             </h1>
                             <ul className="list-inline">
                                 <li className="list-inline-item">
-                                    <a href="/" className={this.props.path === '/' ? 'active': ''}>Popular</a>
+                                    <a href="/" className={'d-flex align-items-center ' + (this.props.path === '/' ? 'active': '')}><i className="mdi mdi-fire"></i><span>Popular</span></a>
                                 </li>
                                 <li className="list-inline-item">
                                     <a href="/newest" className={this.props.path === '/newest' ? 'active': ''}>New</a>
@@ -57,13 +57,13 @@ class Nav extends React.Component {
                         <div className="d-flex flex-row align-items-center">
                             <ul className="list-inline">
                                 <li className="list-inline-item">
-                                    <a href="/" className="d-flex flex-row align-items-center"><i className="mdi-search"></i><span>Search</span></a>
+                                    <a href="/" className="d-flex flex-row align-items-center"><i className="mdi mdi-magnify"></i><span>Search</span></a>
                                 </li>
                                 {!this.props.user && <li className="list-inline-item">
-                                    <a href="/signup" className="d-flex flex-row align-items-center"><i className="mdi-user-solid-circle"></i><span>Login / Register</span></a>
+                                    <a href="/signup" className="d-flex flex-row align-items-center"><i className="mdi mdi-account-circle"></i><span>Login / Register</span></a>
                                 </li>}
                                 {this.props.user && <li className="list-inline-item">
-                                    <a href="/" className="d-flex flex-row align-items-center">{this.props.user.username}</a>
+                                    <a href="/" className="d-flex flex-row align-items-center">@{this.props.user.username}</a>
                                 </li>}
                             </ul>
                         </div>

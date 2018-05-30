@@ -28,7 +28,7 @@ class Upvote extends React.Component {
 
     render() {
         return (
-            <button className={"upvote-btn " + (this.props.post.upvotedByCurrentUser ? 'active' : '')} onClick={this.upvote}><i className="mdi-arrow-outline-up"></i></button>
+            <button className={"upvote-btn " + (this.props.post.upvotedByCurrentUser ? 'active' : '')} onClick={this.upvote}><i className={"mdi " + (this.props.post.upvotedByCurrentUser ? 'mdi-arrow-up-drop-circle' : 'mdi-arrow-up-drop-circle-outline')}></i></button>
         )
     }
 }
