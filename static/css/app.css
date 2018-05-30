@@ -24,7 +24,7 @@ a:hover {
   color: #00bfa5;
 }
 header {
-  padding: 2rem 0;
+  padding: 2rem 0 3rem;
 }
 header h1.site-title {
   font-size: 0;
