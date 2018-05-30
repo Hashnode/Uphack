@@ -183,9 +183,13 @@ class Post extends React.Component {
                                             </li> */}
                                             {post.numComments > 0 &&
                                                 <li className="list-inline-item">
-                                                    <p>
-                                                        
-                                                            <a href="#" className="action">{post.numComments} comment{post.numComments > 1 ? 's' : ''}</a>       
+                                                    |
+                                                </li>
+                                            }
+                                            {post.numComments > 0 &&
+                                                <li className="list-inline-item">
+                                                    <p> 
+                                                        <a href={"/post?id=" + post._id} className="action">{post.numComments} comment{post.numComments > 1 ? 's' : ''}</a>       
                                                     </p>
                                                 </li>
                                             }
