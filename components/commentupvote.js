@@ -34,7 +34,7 @@ class CommentUpvote extends React.Component {
     render() {
         return (
             <button className={"upvote-btn " + (this.props.comment.upvotedByCurrentUser ? 'active' : '')} onClick={this.upvote}>
-                <i className="mdi-arrow-outline-up"></i>
+                <i className={"mdi " + (this.props.comment.upvotedByCurrentUser ? 'mdi-arrow-up-drop-circle' : 'mdi-arrow-up-drop-circle-outline')}></i>
             </button>
         )
     }

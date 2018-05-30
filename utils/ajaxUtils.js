@@ -14,10 +14,10 @@ export default {
           url += '?sortBy=date';
         }
         else if (path === '/show') {
-          url += '?type=showHN';
+          url += '?type=showUH';
         }
         else if (path === '/ask') {
-          url += '?type=askHN';
+          url += '?type=askUH';
         }
         
         const response = await fetch(url, {
