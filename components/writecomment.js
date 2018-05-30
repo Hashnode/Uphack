@@ -6,14 +6,23 @@ import bson from 'bson'
 class WriteComment extends React.Component {
     constructor(props, context) {
         super(props, context);
-        this.state = {};
     }
 
     submitComment = () => {
+
+        if (!this.props.user) {
+            window.location.href = '/signup';
+            return;
+        }
+
         const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
         const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);
         const id = new bson.ObjectID().toString();
         const content = this.content.value;
+
+        if (!content || content.trim() === '') {
+            return;
+        }
 
         let txBody = { 
             type: "createComment",
@@ -31,6 +40,7 @@ class WriteComment extends React.Component {
                 content: content,
                 date: new Date(),
                 author: this.props.user,
+                upvotes: 1,
                 upvotedByCurrentUser: true
             });
         });
