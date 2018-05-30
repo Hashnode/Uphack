@@ -1,7 +1,6 @@
-@import "font";
-
-@primary-blue: #2962ff;
 @dark: #161616;
+@primary-accent: #1de9b6;
+@primary-color: #00bfa5;
 
 html{
     font-size: 14px; 
@@ -47,23 +46,21 @@ body{
 a{
     &:hover{
         text-decoration: none;
-        color: @primary-blue;
+        color: @primary-color;
     }
 }
 
 header{
-    padding: 2rem 0;
-    margin-bottom: 2rem;
+    padding: 2rem 0 3rem;
     h1.site-title{
-        font-size: 1.4rem;
-        margin: 0 2rem 0 0;
-        font-weight: 600;
+        font-size: 0;
+        margin: 0 3rem 0 0;
         a{
-            color: @dark;
             display: block;
-            letter-spacing: .3px;
-            &:hover{
-                color: @primary-blue;
+            transform: scale(1.2);
+            img{
+                display: block;
+                width: 100px;
             }
         }
     }
@@ -71,24 +68,32 @@ header{
         margin: 0;
         color: #C4C4C4;
         a{
-            color: #7F7F7F;
-            font-size: 0.85rem;
+            color: #616161;
+            font-size: 0.9375rem;
             text-transform: uppercase;
             display: block;
             padding: .3rem .5rem;
-            font-weight: 500;
+            font-weight: 600;
+            margin: 0 .3rem;
+            border: 2px solid transparent;
             span{
                 display: block;
             }
             i{
-                margin-right: .6rem;
                 display: block;
                 transform: scale(1.2);
+                margin: 0 4px 0 0;
+            }
+            &:hover{
+                color: @primary-accent;
+                background: @dark;
+                border-color: @dark;
             }
             &.active{
-                background: @dark;
-                color: #FFF;
+                background: @primary-accent;
+                color: @dark;
                 font-weight: 700;
+                border-color: @dark;
             }
         }
     }
@@ -104,15 +109,15 @@ header{
         cursor: pointer;
         line-height: 1;
         color: #969696;
-        font-size: 1.1rem;
+        font-size: 2rem;
         position: relative;
         top: 3px;
+        outline: none;
         i{
             display: inline-block;
-            width: 15.41px;
         }
         &.active{
-            color: @primary-blue;
+            color: @primary-color;
         }
     }
     p{
@@ -123,31 +128,42 @@ header{
     }
     .content{
         h3{
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin: 0 .3rem 0 0;
-            line-height: 1.4;
+            font-weight: 700;
             a{
                 color: @dark;
+                &:visited{
+                    color: #9e9e9e;
+                }
             }
         }
         span.domain{
             display: inline-block;
-            color: #ADADAD;
+            color: #9e9e9e;
             font-size: .9rem;
             a{
-                color: #ADADAD;
+                color: #616161;
+                &:visited{
+                    color: #9e9e9e;
+                }
             }
         }
     }
     .meta{
-        color: #C4C4C4;
+        color: #9e9e9e; 
+        li{
+            margin-right: .4rem;
+        }
         p{
             font-size: .87rem;
-            color: #8A8A8A;
             a{
-                color: #8A8A8A;
+                color: #9e9e9e;
+                &.action{
+                    font-weight: 600;
+                }
                 &:hover{
-                    color: @primary-blue;
+                    color: @primary-accent;
                 }
             }
             span.pipe{
@@ -200,7 +216,7 @@ header{
             width: 15.41px;
         }
         &.active{
-            color: @primary-blue;
+            color: @primary-accent;
         }
     }
     .upvote-wrap{
@@ -217,7 +233,7 @@ header{
                 a{
                     color: #8A8A8A;
                     &:hover{
-                        color: @primary-blue;
+                        color: @primary-accent;
                     }
                 }
                 span.pipe{
