@@ -2,6 +2,10 @@
 @primary-accent: #1de9b6;
 @primary-color: #00bfa5;
 
+*{
+    outline: none;
+}
+
 html{
     font-size: 14px; 
 }
@@ -76,7 +80,7 @@ header{
             font-weight: 600;
             margin: 0 .3rem;
             border: 2px solid transparent;
-            border-radius: 6px;
+            border-radius: 2px;
             span{
                 display: block;
             }
@@ -116,7 +120,6 @@ header{
         font-size: 2rem;
         position: relative;
         top: 3px;
-        outline: none;
         i{
             display: inline-block;
         }
@@ -186,9 +189,11 @@ header{
         min-height: 6rem;
         display: block;
         width: 100%;
-        padding: .5rem;
+        padding: 1rem;
         border: 1px solid #C4C4C4;
         position: relative;
+        border-radius: 2px;
+        border-width: 2px;
     }
 }
 
@@ -293,5 +298,27 @@ header{
             font-size: 1rem;
             color: #C4C4C4;
         }
+    }
+}
+
+.post-list{
+    margin-bottom: 10rem;
+}
+
+.widget{
+    padding: 2rem;
+    background: rgb(243, 241, 241);
+    border: 2px solid @dark;
+    border-radius: 2px;
+}
+
+.btn-primary{
+    background: @primary-color;
+    border-color: @primary-color;
+    border-radius: 2px;
+    font-weight: 700;
+    &:hover{
+        background: @primary-accent;
+        border-color: @primary-accent;
     }
 }

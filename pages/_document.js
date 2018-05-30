@@ -22,6 +22,7 @@ export default class Hashnews extends Document {
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
             <link rel="stylesheet" href="//cdn.materialdesignicons.com/2.4.85/css/materialdesignicons.min.css"/>
             <link rel="stylesheet" href="/static/css/app.css"/>
+            <link rel="icon" href="/static/images/fav.png" type="image/png"/>
         </Head>
         <body>
             <Main />

@@ -1,3 +1,6 @@
+* {
+  outline: none;
+}
 html {
   font-size: 14px;
 }
@@ -51,7 +54,7 @@ header ul a {
   font-weight: 600;
   margin: 0 .3rem;
   border: 2px solid transparent;
-  border-radius: 6px;
+  border-radius: 2px;
 }
 header ul a span {
   display: block;
@@ -89,7 +92,6 @@ header ul a.active {
   font-size: 2rem;
   position: relative;
   top: 3px;
-  outline: none;
 }
 .single-post button.upvote-btn i {
   display: inline-block;
@@ -156,9 +158,11 @@ header ul a.active {
   min-height: 6rem;
   display: block;
   width: 100%;
-  padding: .5rem;
+  padding: 1rem;
   border: 1px solid #C4C4C4;
   position: relative;
+  border-radius: 2px;
+  border-width: 2px;
 }
 .btn {
   border-radius: 0;
@@ -257,4 +261,23 @@ header ul a.active {
 .ask-wrapper .side-note p {
   font-size: 1rem;
   color: #C4C4C4;
+}
+.post-list {
+  margin-bottom: 10rem;
+}
+.widget {
+  padding: 2rem;
+  background: #f3f1f1;
+  border: 2px solid #161616;
+  border-radius: 2px;
+}
+.btn-primary {
+  background: #00bfa5;
+  border-color: #00bfa5;
+  border-radius: 2px;
+  font-weight: 700;
+}
+.btn-primary:hover {
+  background: #1de9b6;
+  border-color: #1de9b6;
 }

@@ -72,7 +72,16 @@ class Index extends React.Component {
         <Nav user={this.state.user} path={this.props.path} />
         <div className="post-list">
           <div className="container">
-            {posts}
+            <div className="row">
+              <div className="col-9">
+                {posts}
+              </div>
+              <div className="col-3">
+                <div className="widget">
+                  
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
