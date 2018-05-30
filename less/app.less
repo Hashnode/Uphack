@@ -306,10 +306,49 @@ header{
 }
 
 .widget{
+    // margin-top: 2rem;
     padding: 1rem;
-    p{
-        font-size: 1rem;
+    border: 2px solid @primary-color;
+    border-radius: 2px;
+    h3{
+        margin: 3rem 0 1rem 0;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #757575;
+    }
+    a{
         color: @dark;
+        font-weight: 600;
+        display: inline-block;
+    }
+    p{
+        font-size: 1.08rem;
+        color: @dark;
+        a{
+            margin: 0;
+        }
+    }
+    ul{
+        margin: 0;
+        li{
+            margin: 0 0 .1rem 0;
+            font-size: 1.08rem;
+        }
+        &.validators{
+            a{
+                color: @primary-color;
+                font-weight: 700;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            li{
+                margin-bottom: .3rem;
+            }
+            img{
+                width: 20px;
+                display: block;
+                margin-right: 8px;
+            }
+        }
     }
 }
 

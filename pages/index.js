@@ -78,7 +78,20 @@ class Index extends React.Component {
               </div>
               <div className="col-3">
                 <div className="widget">
-                    <p><b>Uphack</b> is a blockchain powered social news sharing community. You can call it Hacker News on Blockchain.</p>
+                    <p><a href="/">Uphack</a> is a news sharing application which is running on the Mint Blockchain</p>
+                    <ul className="list-unstyled">
+                      <li><a href="#">How Uphack works?</a></li>
+                      <li><a href="#">Mint Blockchan (Github <i className="mdi mdi-github-circle"></i>)</a></li>
+                    </ul>
+                    <h3>Active validators</h3>
+                    <ul className="list-unstyled validators">
+                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/us.png"/>12.23.44.11</a></li>
+                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/cn.png"/>34.22.09.23</a></li>
+                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/fr.png"/>12.23.44.11</a></li>
+                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/na.png"/>34.22.09.23</a></li>
+                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/nu.png"/>12.23.44.11</a></li>
+                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/rw.png"/>34.22.09.23</a></li>
+                    </ul>
                 </div>
               </div>
             </div>

@@ -267,10 +267,46 @@ header ul a.active {
 }
 .widget {
   padding: 1rem;
+  border: 2px solid #00bfa5;
+  border-radius: 2px;
+}
+.widget h3 {
+  margin: 3rem 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #757575;
+}
+.widget a {
+  color: #161616;
+  font-weight: 600;
+  display: inline-block;
 }
 .widget p {
-  font-size: 1rem;
+  font-size: 1.08rem;
   color: #161616;
+}
+.widget p a {
+  margin: 0;
+}
+.widget ul {
+  margin: 0;
+}
+.widget ul li {
+  margin: 0 0 .1rem 0;
+  font-size: 1.08rem;
+}
+.widget ul.validators a {
+  color: #00bfa5;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+}
+.widget ul.validators li {
+  margin-bottom: .3rem;
+}
+.widget ul.validators img {
+  width: 20px;
+  display: block;
+  margin-right: 8px;
 }
 .btn-primary {
   background: #00bfa5;
