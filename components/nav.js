@@ -53,7 +53,7 @@ class Nav extends React.Component {
                                     <a href="/submit">Submit</a>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="#" title="Switch Theme"><i className="mdi mdi-theme-light-dark"></i></a>
+                                    <a href="#" title="Switch Theme"><i className="mdi mdi-weather-night"></i></a>
                                 </li>
                             </ul>
                         </div>
