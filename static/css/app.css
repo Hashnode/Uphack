@@ -43,7 +43,7 @@ header ul {
   color: #C4C4C4;
 }
 header ul a {
-  color: #616161;
+  color: #212121;
   font-size: 0.9375rem;
   text-transform: uppercase;
   display: block;
@@ -51,6 +51,7 @@ header ul a {
   font-weight: 600;
   margin: 0 .3rem;
   border: 2px solid transparent;
+  border-radius: 6px;
 }
 header ul a span {
   display: block;
@@ -59,6 +60,9 @@ header ul a i {
   display: block;
   transform: scale(1.2);
   margin: 0 4px 0 0;
+}
+header ul a i:last-child {
+  margin: 0;
 }
 header ul a:hover {
   color: #1de9b6;
@@ -81,7 +85,7 @@ header ul a.active {
   border: none;
   cursor: pointer;
   line-height: 1;
-  color: #969696;
+  color: #424242;
   font-size: 2rem;
   position: relative;
   top: 3px;

@@ -68,7 +68,7 @@ header{
         margin: 0;
         color: #C4C4C4;
         a{
-            color: #616161;
+            color: #212121;
             font-size: 0.9375rem;
             text-transform: uppercase;
             display: block;
@@ -76,6 +76,7 @@ header{
             font-weight: 600;
             margin: 0 .3rem;
             border: 2px solid transparent;
+            border-radius: 6px;
             span{
                 display: block;
             }
@@ -83,6 +84,9 @@ header{
                 display: block;
                 transform: scale(1.2);
                 margin: 0 4px 0 0;
+                &:last-child{
+                    margin: 0;
+                }
             }
             &:hover{
                 color: @primary-accent;
@@ -108,7 +112,7 @@ header{
         border: none;
         cursor: pointer;
         line-height: 1;
-        color: #969696;
+        color: #424242;
         font-size: 2rem;
         position: relative;
         top: 3px;
