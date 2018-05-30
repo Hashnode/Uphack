@@ -78,7 +78,7 @@ class Index extends React.Component {
               </div>
               <div className="col-3">
                 <div className="widget">
-                  
+                    <p><b>Uphack</b> is a blockchain powered social news sharing community. You can call it Hacker News on Blockchain.</p>
                 </div>
               </div>
             </div>

@@ -175,6 +175,7 @@ header ul a.active {
   padding: 1rem;
   background: rgba(0, 0, 0, 0.04);
   margin-bottom: 1rem;
+  border-radius: 2px;
 }
 .single-comment button.upvote-btn {
   padding: 0;
@@ -183,8 +184,8 @@ header ul a.active {
   border: none;
   cursor: pointer;
   line-height: 1;
-  color: #969696;
-  font-size: 1.1rem;
+  color: #424242;
+  font-size: 1.5rem;
   position: relative;
   top: 3px;
 }
@@ -193,22 +194,21 @@ header ul a.active {
   width: 15.41px;
 }
 .single-comment button.upvote-btn.active {
-  color: #1de9b6;
+  color: #00bfa5;
 }
 .single-comment .upvote-wrap {
   margin-right: .7rem;
 }
 .single-comment .comment-content .meta {
-  color: #C4C4C4;
+  color: #9e9e9e;
   margin: 0 0 .5rem 0;
 }
 .single-comment .comment-content .meta p {
   font-size: .87rem;
-  color: #8A8A8A;
   margin: 0;
 }
 .single-comment .comment-content .meta p a {
-  color: #8A8A8A;
+  color: #9e9e9e;
 }
 .single-comment .comment-content .meta p a:hover {
   color: #1de9b6;
@@ -266,10 +266,11 @@ header ul a.active {
   margin-bottom: 10rem;
 }
 .widget {
-  padding: 2rem;
-  background: #f3f1f1;
-  border: 2px solid #161616;
-  border-radius: 2px;
+  padding: 1rem;
+}
+.widget p {
+  font-size: 1rem;
+  color: #161616;
 }
 .btn-primary {
   background: #00bfa5;

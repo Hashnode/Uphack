@@ -209,6 +209,7 @@ header{
     padding: 1rem;
     background: rgba(0,0,0,.04);
     margin-bottom: 1rem;
+    border-radius: 2px;
     button.upvote-btn{
         padding: 0;
         margin: 0;
@@ -216,8 +217,8 @@ header{
         border: none;
         cursor: pointer;
         line-height: 1;
-        color: #969696;
-        font-size: 1.1rem;
+        color: #424242;
+        font-size: 1.5rem;
         position: relative;
         top: 3px;
         i{
@@ -225,7 +226,7 @@ header{
             width: 15.41px;
         }
         &.active{
-            color: @primary-accent;
+            color: @primary-color;
         }
     }
     .upvote-wrap{
@@ -233,14 +234,13 @@ header{
     }
     .comment-content{
         .meta{
-            color: #C4C4C4;
+            color: #9e9e9e;
             margin: 0 0 .5rem 0;
             p{
                 font-size: .87rem;
-                color: #8A8A8A;
                 margin: 0;
                 a{
-                    color: #8A8A8A;
+                    color: #9e9e9e;
                     &:hover{
                         color: @primary-accent;
                     }
@@ -306,10 +306,11 @@ header{
 }
 
 .widget{
-    padding: 2rem;
-    background: rgb(243, 241, 241);
-    border: 2px solid @dark;
-    border-radius: 2px;
+    padding: 1rem;
+    p{
+        font-size: 1rem;
+        color: @dark;
+    }
 }
 
 .btn-primary{
