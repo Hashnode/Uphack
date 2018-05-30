@@ -4,14 +4,25 @@
 html {
   font-size: 14px;
 }
+a {
+  color: #00bfa5;
+}
+a:hover {
+  color: #1de9b6;
+}
 body.dark {
   background: #161616;
 }
 body.dark header h1.site-title a {
   color: #FFF;
 }
+body.dark header ul a {
+  color: #ccc;
+}
 body.dark header ul a.active {
-  background: rgba(255, 255, 255, 0.2);
+  background: #1de9b6;
+  color: #161616;
+  border-color: #161616;
 }
 body.dark .single-post .content h3 a {
   color: #FFF;
@@ -21,6 +32,15 @@ body.dark .single-comment {
 }
 body.dark .single-comment .comment-content .comment-data {
   color: #FFF;
+}
+body.dark .widget {
+  color: #FFF;
+}
+body.dark .widget a {
+  color: #ccc;
+}
+body.dark .widget h3 {
+  color: #CCC;
 }
 a:hover {
   text-decoration: none;
@@ -269,6 +289,7 @@ header ul a.active {
   padding: 1rem;
   border: 2px solid #00bfa5;
   border-radius: 2px;
+  color: #161616;
 }
 .widget h3 {
   margin: 3rem 0 1rem 0;
@@ -283,7 +304,6 @@ header ul a.active {
 }
 .widget p {
   font-size: 1.08rem;
-  color: #161616;
 }
 .widget p a {
   margin: 0;

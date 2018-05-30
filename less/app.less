@@ -10,6 +10,13 @@ html{
     font-size: 14px; 
 }
 
+a{
+    color: @primary-color;
+    &:hover{
+        color: @primary-accent;
+    }
+}
+
 body{
     &.dark{
         background: @dark;
@@ -21,8 +28,11 @@ body{
             }
             ul{
                 a{
+                    color: #ccc;
                     &.active{
-                        background: rgba(255,255,255,.2)
+                        background: @primary-accent;
+                        color: @dark;
+                        border-color: @dark;
                     }
                 }
             }
@@ -42,6 +52,15 @@ body{
                 .comment-data{
                     color: #FFF;
                 }
+            }
+        }
+        .widget{
+            color: #FFF;
+            a{
+                color: #ccc;
+            }
+            h3{
+                color: #CCC;
             }
         }
     }
@@ -306,10 +325,10 @@ header{
 }
 
 .widget{
-    // margin-top: 2rem;
     padding: 1rem;
     border: 2px solid @primary-color;
     border-radius: 2px;
+    color: @dark;
     h3{
         margin: 3rem 0 1rem 0;
         font-size: 1.2rem;
@@ -323,7 +342,6 @@ header{
     }
     p{
         font-size: 1.08rem;
-        color: @dark;
         a{
             margin: 0;
         }

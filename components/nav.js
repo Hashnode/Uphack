@@ -22,7 +22,7 @@ class Nav extends React.Component {
                     <div className="d-flex flex-row justify-content-between align-items-center">
                         <div className="d-flex flex-row align-items-center">
                             <h1 className="site-title">
-                                <a href="/"><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1527681177561/SJGoeM3Jm.png"/></a>
+                                <a href="/"><img src="/static/images/logo.png"/></a>
                             </h1>
                             <ul className="list-inline">
                                 <li className="list-inline-item">

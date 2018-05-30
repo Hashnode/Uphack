@@ -24,7 +24,7 @@ export default class Hashnews extends Document {
             <link rel="stylesheet" href="/static/css/app.css"/>
             <link rel="icon" href="/static/images/fav.png" type="image/png"/>
         </Head>
-        <body>
+        <body className="">
             <Main />
             <script type="text/javascript" src="/static/js/encoding-indexes.js"></script>
             <script type="text/javascript" src="/static/js/encoding.js"></script>
