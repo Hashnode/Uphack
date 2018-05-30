@@ -181,11 +181,14 @@ class Post extends React.Component {
                                                     <a href="#">save</a>
                                                 </p>
                                             </li> */}
-                                            <li className="list-inline-item">
-                                                <p>
-                                                    <a href="#">{post.numComments} comment{post.numComments > 1 ? 's' : ''}</a>
-                                                </p>
-                                            </li>
+                                            {post.numComments > 0 &&
+                                                <li className="list-inline-item">
+                                                    <p>
+                                                        
+                                                            <a href="#" className="action">{post.numComments} comment{post.numComments > 1 ? 's' : ''}</a>       
+                                                    </p>
+                                                </li>
+                                            }
                                         </ul>
                                     </div>
                                 </div>

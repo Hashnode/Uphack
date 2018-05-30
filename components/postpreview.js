@@ -58,18 +58,18 @@ class PostPreview extends React.Component {
                                 </li>
                                 <li className="list-inline-item">
                                     |
-                                    </li>
-                                {/* <li className="list-inline-item">
-                                    <p><a href="#">flag</a></p>
                                 </li>
-                                <li className="list-inline-item">
-                                    <p><a href="#">save</a></p>
-                                </li> */}
+                                
                                 <li className="list-inline-item">
                                     <p>
+                                    {post.numComments == 0 ?
                                         <a href={"/post?id=" + post._id} className="action">discuss</a>
+                                        :
+                                        <a href={"/post?id=" + post._id} className="action">{post.numComments} comment{post.numComments > 1 && 's'}</a>
+                                    }
                                     </p>
                                 </li>
+                                
                             </ul>
                         </div>
                     </div>
