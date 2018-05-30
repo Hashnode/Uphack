@@ -9,6 +9,11 @@ class Upvote extends React.Component {
     }
 
     upvote = () => {
+        if (!this.props.user) {
+            window.location.href = '/signup';
+            return;
+        }
+
         const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
         const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);      
 
@@ -16,8 +21,7 @@ class Upvote extends React.Component {
             type: "upvotePost",
             entity: {
                 stamp: new Date().getTime(),
-                postId: this.props.post._id,
-                upvoter: this.props.user._id
+                postId: this.props.post._id
             }
         }
 

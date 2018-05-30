@@ -21,11 +21,22 @@ class Signup extends React.Component {
     }
 
     signup = e => {
+
+        e.preventDefault();
+
         let username = this.username.value,
             name = this.name.value,
             secret = encoding.hex2ab(localStorage.getItem('hashnewsKey')),
             publicKey = nacl.util.encodeBase64(encoding.hex2ab(this.publicKey.value)),
             id = new bson.ObjectID().toString();
+
+        if (!username || !/^[A-Za-z_0-9]+$/.test(username)) {
+            return;
+        }
+        
+        if (!name || name.trim() === '') {
+            return;
+        }
         
         let txBody = { 
             type: "createUser",
@@ -33,7 +44,6 @@ class Signup extends React.Component {
                 id: id,
                 username: username,
                 name: name,
-                publicKey: this.publicKey.value
             } 
         }
 
