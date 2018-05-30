@@ -9,6 +9,12 @@ class CommentUpvote extends React.Component {
     }
 
     upvote = () => {
+
+        if (!this.props.user) {
+            window.location.href = '/signup';
+            return;
+        }
+
         const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
         const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);      
 
@@ -16,8 +22,7 @@ class CommentUpvote extends React.Component {
             type: "upvoteComment",
             entity: {
                 stamp: new Date().getTime(),
-                commentId: this.props.comment._id,
-                upvoter: this.props.user._id
+                commentId: this.props.comment._id
             }
         }
 

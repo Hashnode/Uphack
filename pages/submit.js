@@ -17,11 +17,19 @@ class Submit extends React.Component {
         const hashnewsKey = localStorage.getItem('hashnewsKey');
       
         if (!hashnewsKey) {
+            window.location.href = '/signup';
             return;
         }
+        
         const secret = encoding.hex2ab(hashnewsKey);
         const publicKey = encoding.toHexString(nacl.sign.keyPair.fromSecretKey(secret).publicKey).toUpperCase();
         const user = await ajaxUtils.loadUser(publicKey);
+        
+        if (!user) {
+            window.location.href = '/signup';
+            return;
+        }
+
         this.setState({ user });
     }
 
