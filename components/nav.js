@@ -26,7 +26,7 @@ class Nav extends React.Component {
                             </h1>
                             <ul className="list-inline">
                                 <li className="list-inline-item">
-                                    <a href="/" className={'d-flex align-items-center ' + (this.props.path === '/' ? 'active': '')}><i className="mdi mdi-fire"></i><span>Popular</span></a>
+                                    <a href="/" className={'d-flex align-items-center ' + (this.props.path === '/' ? 'active': '')}><i className="mdi mdi-fire"></i><span>Hot</span></a>
                                 </li>
                                 <li className="list-inline-item">
                                     <a href="/newest" className={this.props.path === '/newest' ? 'active': ''}>New</a>

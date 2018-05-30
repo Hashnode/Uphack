@@ -56,9 +56,9 @@ class PostPreview extends React.Component {
                                 <li className="list-inline-item">
                                     <p><a href={"/post?id=" + post._id}>{moment(post.date).fromNow()}</a></p>
                                 </li>
-                                {/* <li className="list-inline-item">
+                                <li className="list-inline-item">
                                     |
-                                    </li> */}
+                                    </li>
                                 {/* <li className="list-inline-item">
                                     <p><a href="#">flag</a></p>
                                 </li>
@@ -67,7 +67,7 @@ class PostPreview extends React.Component {
                                 </li> */}
                                 <li className="list-inline-item">
                                     <p>
-                                        <a href={"/post?id=" + post._id}>discuss</a>
+                                        <a href={"/post?id=" + post._id} className="action">discuss</a>
                                     </p>
                                 </li>
                             </ul>

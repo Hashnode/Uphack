@@ -102,30 +102,41 @@ header ul a.active {
   margin-right: .7rem;
 }
 .single-post .content h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   margin: 0 .3rem 0 0;
-  line-height: 1.4;
+  font-weight: 700;
 }
 .single-post .content h3 a {
   color: #161616;
 }
+.single-post .content h3 a:visited {
+  color: #9e9e9e;
+}
 .single-post .content span.domain {
   display: inline-block;
-  color: #ADADAD;
+  color: #9e9e9e;
   font-size: .9rem;
 }
 .single-post .content span.domain a {
-  color: #ADADAD;
+  color: #616161;
+}
+.single-post .content span.domain a:visited {
+  color: #9e9e9e;
 }
 .single-post .meta {
-  color: #C4C4C4;
+  color: #9e9e9e;
+}
+.single-post .meta li {
+  margin-right: .4rem;
 }
 .single-post .meta p {
   font-size: .87rem;
-  color: #8A8A8A;
 }
 .single-post .meta p a {
-  color: #8A8A8A;
+  color: #9e9e9e;
+}
+.single-post .meta p a.action {
+  font-weight: 600;
 }
 .single-post .meta p a:hover {
   color: #1de9b6;
