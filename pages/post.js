@@ -40,10 +40,6 @@ class Post extends React.Component {
 
     extractHostname(url) {
 
-        if (!url) {
-            return "hashnode.com";
-        }
-
         var hostname;
         //find & remove protocol (http, ftp, etc.) and get hostname
 
@@ -152,10 +148,9 @@ class Post extends React.Component {
                                 <div className="content">
                                     <div className="title d-flex flex-row align-items-end">
                                         <h3>
-                                            <a href="#">{post.title}</a>
+                                            <a href={post.url || '/post?id=' + post._id}>{post.title}</a>
                                         </h3>
-                                        <span className="domain">(
-                                            <a href="#">{this.extractHostname(post.url)}</a>)</span>
+                                        {post.url && <span className="domain">(<a href={post.url}>{this.extractHostname(post.url)}</a>)</span>}
                                     </div>
                                     <div className="meta">
                                         <ul className="list-inline">
@@ -167,7 +162,7 @@ class Post extends React.Component {
                                             </li>
                                             <li className="list-inline-item">
                                                 <p>
-                                                    <a href="#">{moment(post.date).fromNow()}</a>
+                                                    <a href={'/post?id=' + post._id}>{moment(post.date).fromNow()}</a>
                                                 </p>
                                             </li>
                                             {/* <li className="list-inline-item">
@@ -197,6 +192,7 @@ class Post extends React.Component {
                                             }
                                         </ul>
                                     </div>
+                                    {post.text && <p>{post.text}</p>}
                                 </div>
                             </div>
                         </div>
