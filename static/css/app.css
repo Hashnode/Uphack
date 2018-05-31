@@ -193,7 +193,7 @@ header ul a.active {
 .single-comment {
   font-size: 1rem;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(38, 50, 56, 0.04);
   margin-bottom: 1rem;
   border-radius: 2px;
 }
@@ -241,6 +241,13 @@ header ul a.active {
   font-size: 1rem;
   color: #161616;
 }
+.single-comment .comment-content .comment-data p,
+.single-comment .comment-content .comment-data ul,
+.single-comment .comment-content .comment-data li,
+.single-comment .comment-content .comment-data table,
+.single-comment .comment-content .comment-data blockquote {
+  color: #161616;
+}
 .ask-wrapper {
   width: 60%;
 }
@@ -285,11 +292,125 @@ header ul a.active {
 .post-list {
   margin-bottom: 10rem;
 }
+.page-content {
+  padding: 1rem 2rem;
+  color: #161616;
+  font-size: 1.2rem;
+  margin-bottom: 10rem;
+}
+.page-content.tldr {
+  padding: 2rem;
+  border: 2px solid #00bfa5;
+}
+.page-content.tldr a {
+  font-weight: 500;
+}
+.page-content img {
+  display: block;
+  max-width: 100%;
+}
+.page-content img.feat-img {
+  display: block;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.page-content h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.page-content h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  margin-top: 6rem;
+  color: #757575;
+}
+.page-content h3 {
+  font-size: 1.4rem;
+}
+.page-content h4,
+.page-content h5,
+.page-content h6 {
+  font-size: 1.2rem;
+}
+.page-content p,
+.page-content ul,
+.page-content blockquote,
+.page-content table {
+  margin-bottom: 2rem;
+}
+.page-content a {
+  font-weight: 700;
+}
+.page-content blockquote {
+  padding: 1rem 0 1rem 2rem;
+  border-left: 1px solid #1de9b6;
+}
+.page-content blockquote p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #666;
+  margin: 0;
+}
+.page-content .powered-by {
+  margin: 3rem 0 0 0;
+  width: 220px;
+  color: #757575;
+}
+.page-content .powered-by p {
+  font-size: 1rem;
+}
+.page-content .powered-by a.feat {
+  width: 100%;
+  display: block;
+  margin-bottom: .5rem;
+}
+.page-content .powered-by a.feat img {
+  width: 100%;
+  display: block;
+}
+.page-content .profiles-wrap {
+  margin-bottom: 2rem;
+}
+.page-content .profile-card {
+  width: 45%;
+  margin-right: 5%;
+}
+.page-content .profile-card a.profile-photo {
+  display: block;
+  width: 60%;
+  margin-bottom: 1rem;
+}
+.page-content .profile-card a.profile-photo img {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+}
+.page-content .profile-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+.page-content .profile-card h3 a {
+  color: #161616;
+  font-weight: 600;
+}
+.page-content .profile-card p,
+.page-content .profile-card ul {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.page-content .profile-card p a,
+.page-content .profile-card ul a {
+  color: #00bfa5;
+}
 .widget {
   padding: 1rem;
   border: 2px solid #00bfa5;
   border-radius: 2px;
   color: #161616;
+  margin-bottom: 2rem;
+}
+.widget.mint-widget {
+  text-align: center;
 }
 .widget h3 {
   margin: 3rem 0 1rem 0;
@@ -298,9 +419,13 @@ header ul a.active {
   color: #757575;
 }
 .widget a {
-  color: #161616;
+  color: #00bfa5;
   font-weight: 600;
   display: inline-block;
+  font-size: 1.08rem;
+}
+.widget a i {
+  color: #666;
 }
 .widget p {
   font-size: 1.08rem;
@@ -315,8 +440,10 @@ header ul a.active {
   margin: 0 0 .1rem 0;
   font-size: 1.08rem;
 }
+.widget ul li a {
+  font-size: 0.9rem;
+}
 .widget ul.validators a {
-  color: #00bfa5;
   font-weight: 700;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -328,6 +455,15 @@ header ul a.active {
   display: block;
   margin-right: 8px;
 }
+.widget a.mint-logo {
+  display: block;
+  width: 40%;
+  margin: 1rem auto;
+}
+.widget a.mint-logo img {
+  width: 100%;
+  display: block;
+}
 .btn-primary {
   background: #00bfa5;
   border-color: #00bfa5;
@@ -337,4 +473,10 @@ header ul a.active {
 .btn-primary:hover {
   background: #1de9b6;
   border-color: #1de9b6;
+}
+li.divider {
+  width: 20%;
+  height: 1px;
+  background: #ccc;
+  margin: 1rem 0;
 }

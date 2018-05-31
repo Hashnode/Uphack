@@ -78,10 +78,11 @@ class Index extends React.Component {
               </div>
               <div className="col-3">
                 <div className="widget">
-                    <p><a href="/">Uphack</a> is a news sharing application which is running on the Mint Blockchain</p>
+                    <p>Uphack is an experimental news sharing application powered by Mint Blockchain.</p>
                     <ul className="list-unstyled">
-                      <li><a href="#">How Uphack works?</a></li>
-                      <li><a href="#">Mint Blockchan (Github <i className="mdi mdi-github-circle"></i>)</a></li>
+                      <li><a href="/about"><i className="mdi mdi-airballoon"></i> How this Uphack works?</a></li>
+                      <li><a href="#"><i className="mdi mdi-github-circle"></i> hashnode/mint (Mint Blockchain)</a></li>
+                      <li><a href="#"><i className="mdi mdi-github-circle"></i> hashnode/uphack (codebase)</a></li>
                     </ul>
                     <h3>Active validators</h3>
                     <ul className="list-unstyled validators">
@@ -92,6 +93,10 @@ class Index extends React.Component {
                       <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/nu.png"/>12.23.44.11</a></li>
                       <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/rw.png"/>34.22.09.23</a></li>
                     </ul>
+                </div>
+                <div className="widget mint-widget">
+                  <a href="#" className="mint-logo"><img src="/static/images/mint/logo.png"/></a>
+                  <p>This app is powered by <b>mint blockchain</b></p>
                 </div>
               </div>
             </div>
