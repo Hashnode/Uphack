@@ -5,6 +5,7 @@ import fetch from 'isomorphic-fetch'
 import ajaxUtils from '../utils/ajaxUtils'
 import encoding from '../utils/encoding'
 import PostPreview from '../components/postpreview'
+import Helmet from 'react-helmet'
 
 class Index extends React.Component {
 
@@ -70,6 +71,7 @@ class Index extends React.Component {
     return (
       <div>
         <Nav user={this.state.user} path={this.props.path} />
+        <Helmet title="Uphack: Decentralized Hackernews" />
         <div className="post-list">
           <div className="container">
             <div className="row">
