@@ -33,8 +33,10 @@ class Post extends React.Component {
         const publicKey = encoding.toHexString(nacl.sign.keyPair.fromSecretKey(secret).publicKey).toUpperCase();
         const user = await ajaxUtils.loadUser(publicKey);
         this.setState({ user }, () => {
-            this.getPostUpvoteStatus();
-            this.getCommentUpvoteStatus();
+            if (user) {
+                this.getPostUpvoteStatus();
+                this.getCommentUpvoteStatus();
+            }
         });
     }
 
