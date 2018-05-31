@@ -44,7 +44,7 @@ class About extends React.Component {
                                 </blockquote>
                                 <p>We created this demo to show how to build blockchain powered social apps easily. This is super early and experimental. The primary reason behind open sourcing the repo is to get early feedback and improve the codebase.</p>
                                 <h2>Become a validator</h2>
-                                <p>We are running the network with 4 validators of our own. If you wish to play around and become a validator, please check out <a href="">Mint</a> repo.</p>
+                                <p>We are running the network with 4 validators of our own. If you wish to play around and become a validator, please check out <a href="https://github.com/Hashnode/mint">Mint</a> repo.</p>
                                 <h2>Code Contributions</h2>
                                 <p>Feedback and contributions are always welcome. Feel free to send PRs to both <a href="https://github.com/Hashnode/Uphack">Uphack</a> and <a href="https://github.com/Hashnode/mint">Mint</a> repos. We can't wait to see your contributions. :)</p>
                                 <h2>Who are we?</h2>
