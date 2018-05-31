@@ -42,7 +42,7 @@ router.route('/ajax/get-posts').get((req, res) => {
     const type = req.query.type;
     const sortBy = req.query.sortBy || 'score';
 
-    const searchConfig = {};
+    const searchConfig = { spam: {$ne: true} };
     const sortConfig = {};
 
     if (type) {
