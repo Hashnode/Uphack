@@ -6,6 +6,7 @@ import encoding from '../utils/encoding'
 import makeRPC from '../utils/rpcUtils'
 import bson from 'bson'
 import isUrl from 'is-url'
+import Helmet from 'react-helmet'
 
 class Submit extends React.Component {
     constructor(props, context) {
@@ -71,6 +72,7 @@ class Submit extends React.Component {
         return (
             <div>
                 <Nav user={this.state.user} />
+                <Helmet title="Share a news or start a discussion" />
                 <div className="post-list">
                     <div className="container">
                         <div className="ask-wrapper">

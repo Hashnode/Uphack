@@ -4,6 +4,7 @@ import Nav from '../components/nav'
 import encoding from '../utils/encoding'
 import makeRPC from '../utils/rpcUtils'
 import bson from 'bson'
+import Helmet from 'react-helmet'
 
 class Signup extends React.Component {
     constructor(props, context) {
@@ -52,10 +53,21 @@ class Signup extends React.Component {
         });
     }
 
+    showLoginPrompt = e => {
+        e.preventDefault();
+        const pk = prompt("Please enter your private key");
+        if (!pk) {
+            return;
+        }
+        window.localStorage.setItem("hashnewsKey", pk);        
+        window.location.href = "/";
+    }
+
     render() {
         return (
             <div>
                 <Nav />
+                <Helmet title="Sign up/Login on Uphack" />
                 <div className="post-list">
                     <div className="container">
                         <div className="ask-wrapper">
@@ -92,7 +104,8 @@ class Signup extends React.Component {
                                 </div>
                             </div>
                             <div className="submit-wrapper">
-                                <button className="btn btn-primary" onClick={this.signup}>Sign up</button>
+                                <button className="btn btn-primary" onClick={this.signup}>Sign up</button> &nbsp;
+                                <a href="#" onClick={this.showLoginPrompt}>Already have Private Key?</a>
                             </div>
                             <div className="side-note">
                                 <p>Please copy your private key and keep it safe. If you lose this, you can't recover your account</p>

@@ -1,5 +1,6 @@
 // ./pages/_document.js
 import Document, { Head, Main, NextScript } from 'next/document';
+import Helmet from 'react-helmet';
 
 export default class Hashnews extends Document {
 
@@ -9,14 +10,15 @@ export default class Hashnews extends Document {
 
   static getInitialProps({ renderPage, req }) {
     const { html, head, errorHtml, chunks } = renderPage();
-    return { html, head, errorHtml, chunks }
+    const helmet = Helmet.renderStatic();
+    return { html, head, errorHtml, chunks, helmet }
   }
 
   render() {    
     return (
       <html>
         <Head>
-            <title>Uphack - Decentralised Hacker News</title>
+            {this.props.helmet.title.toComponent()}
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
@@ -24,7 +26,7 @@ export default class Hashnews extends Document {
             <link rel="stylesheet" href="/static/css/app.css"/>
             <link rel="icon" href="/static/images/fav.png" type="image/png"/>
         </Head>
-        <body className="">
+        <body>
             <Main />
             <script type="text/javascript" src="/static/js/encoding-indexes.js"></script>
             <script type="text/javascript" src="/static/js/encoding.js"></script>

@@ -7,6 +7,7 @@ import ajaxUtils from '../utils/ajaxUtils'
 import encoding from '../utils/encoding'
 import CommentList from '../components/commentlist'
 import moment from 'moment'
+import Helmet from 'react-helmet'
 
 class Post extends React.Component {
 
@@ -140,6 +141,7 @@ class Post extends React.Component {
         return (
             <div>
                 <Nav user={this.state.user} />
+                <Helmet title={`${post.title} | Uphack`} />
                 <div className="post-list">
                     <div className="container">
                         <div className="single-post">
