@@ -31,42 +31,27 @@ class Nav extends React.Component {
                                 <li className="list-inline-item">
                                     <a href="/newest" className={this.props.path === '/newest' ? 'active': ''}>New</a>
                                 </li>
-                                {/* <li className="list-inline-item">
-                                    <a href="/">Comments</a>
-                                </li> */}
                                 <li className="list-inline-item">
                                     <a href="/show" className={this.props.path === '/show' ? 'active': ''}>Show</a>
                                 </li>
                                 <li className="list-inline-item">
                                     <a href="/ask" className={this.props.path === '/ask' ? 'active': ''}>Ask</a>
                                 </li>
-                                {/* <li className="list-inline-item">
-                                    <a href="/">Saved</a>
-                                </li> */}
-                                {/* <li className="list-inline-item">
-                                    <a href="/">Jobs</a>
-                                </li> */}
-                                <li className="list-inline-item">
-                                    |
-                                </li>
                                 <li className="list-inline-item">
                                     <a href="/submit">Submit</a>
                                 </li>
-                                {/* <li className="list-inline-item">
-                                    <a href="#" title="Switch Theme"><i className="mdi mdi-weather-night"></i></a>
-                                </li> */}
                             </ul>
                         </div>
                         <div className="d-flex flex-row align-items-center">
                             <ul className="list-inline">
                                 <li className="list-inline-item">
-                                    <a href="/" className="d-flex flex-row align-items-center"><i className="mdi mdi-magnify"></i><span>Search</span></a>
+                                    <a href="#" className="d-flex flex-row align-items-center"><i className="mdi mdi-magnify"></i><span>Search</span></a>
                                 </li>
                                 {!this.props.user && <li className="list-inline-item">
                                     <a href="/signup" className="d-flex flex-row align-items-center"><i className="mdi mdi-account-circle"></i><span>Login / Register</span></a>
                                 </li>}
                                 {this.props.user && <li className="list-inline-item">
-                                    <a href="/" className="d-flex flex-row align-items-center">@{this.props.user.username}</a>
+                                    <a href="#" className="d-flex flex-row align-items-center">@{this.props.user.username}</a>
                                 </li>}
                             </ul>
                         </div>
