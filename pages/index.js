@@ -83,8 +83,8 @@ class Index extends React.Component {
                     <p>Uphack is an experimental news sharing application powered by Mint Blockchain.</p>
                     <ul className="list-unstyled">
                       <li><a href="/about"><i className="mdi mdi-airballoon"></i> How this works</a></li>
-                      <li><a href="#"><i className="mdi mdi-github-circle"></i> hashnode/mint (Mint Blockchain)</a></li>
-                      <li><a href="#"><i className="mdi mdi-github-circle"></i> hashnode/uphack (codebase)</a></li>
+                      <li><a href="https://github.com/Hashnode/mint"><i className="mdi mdi-github-circle"></i> hashnode/mint (Mint Blockchain)</a></li>
+                      <li><a href="https://github.com/Hashnode/Uphack"><i className="mdi mdi-github-circle"></i> hashnode/uphack (codebase)</a></li>
                     </ul>
                     <h3>Active validators</h3>
                     <ul className="list-unstyled validators">
