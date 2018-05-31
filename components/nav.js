@@ -31,24 +31,12 @@ class Nav extends React.Component {
                                 <li className="list-inline-item">
                                     <a href="/newest" className={this.props.path === '/newest' ? 'active': ''}>New</a>
                                 </li>
-                                {/* <li className="list-inline-item">
-                                    <a href="/">Comments</a>
-                                </li> */}
                                 <li className="list-inline-item">
                                     <a href="/show" className={this.props.path === '/show' ? 'active': ''}>Show</a>
                                 </li>
                                 <li className="list-inline-item">
                                     <a href="/ask" className={this.props.path === '/ask' ? 'active': ''}>Ask</a>
                                 </li>
-                                {/* <li className="list-inline-item">
-                                    <a href="/">Saved</a>
-                                </li> */}
-                                {/* <li className="list-inline-item">
-                                    <a href="/">Jobs</a>
-                                </li> */}
-                                {/* <li className="list-inline-item">
-                                    |
-                                </li> */}
                                 <li className="list-inline-item">
                                     <a href="/submit">Submit</a>
                                 </li>
