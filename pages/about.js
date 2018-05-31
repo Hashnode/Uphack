@@ -50,32 +50,32 @@ class About extends React.Component {
                                 <h2>Who are we?</h2>
                                 <div className="d-flex flex-row flex-wrap profiles-wrap">
                                     <div className="profile-card">
-                                        <a href="#" className="profile-photo">
+                                        <a href="https://hashnode.com/@sandeep" target="_Blank" className="profile-photo">
                                             <img src="/static/images/sandeep-panda.jpg"/>
                                         </a>
-                                        <h3><a href="#">Sandeep Panda</a></h3>
-                                        <p>Sandeep is the co-founder of Hashnode and author of the book <a href="https://leanpub.com/smart-contracts">Mastering Smart Contracts</a>.</p>
+                                        <h3><a href="https://hashnode.com/@sandeep" target="_Blank">Sandeep Panda</a></h3>
+                                        <p>Co-founder, Hashnode. Author of the book <a href="https://leanpub.com/smart-contracts" target="_Blank">Mastering Smart Contracts</a>.</p>
                                         <ul className="list-unstyled">
                                             <li>
-                                                <a href="https://hashnode.com/@sandeep">hashnode/sandeep</a>
+                                                <a href="https://hashnode.com/@sandeep" target="_Blank">hashnode/sandeep</a>
                                             </li>
                                             <li>
-                                                <a href="https://twitter.com/Sandeepg33k">twitter/sandeepg33k</a>
+                                                <a href="https://twitter.com/Sandeepg33k" target="_Blank">twitter/sandeepg33k</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div className="profile-card">
-                                        <a href="#" className="profile-photo">
+                                        <a href="https://hashnode.com/@fazlerocks" target="_Blank" className="profile-photo">
                                             <img src="/static/images/syed-fazle-rahman.jpg"/>
                                         </a>
-                                        <h3><a href="#">Syed Fazle Rahman</a></h3>
-                                        <p>Syed is the co-founder of Hashnode and a blockchain enthusiast.</p>
+                                        <h3><a href="https://hashnode.com/@fazlerocks" target="_Blank">Syed Fazle Rahman</a></h3>
+                                        <p>CEO and Co-founder, Hashnode</p>
                                         <ul className="list-unstyled">
                                             <li>
-                                                <a href="https://hashnode.com/@fazlerocks">hashnode/fazlerocks</a>
+                                                <a href="https://hashnode.com/@fazlerocks" target="_Blank">hashnode/fazlerocks</a>
                                             </li>
                                             <li>
-                                                <a href="https://twitter.com/fazlerocks">twitter/fazlerocks</a>
+                                                <a href="https://twitter.com/fazlerocks" target="_Blank">twitter/fazlerocks</a>
                                             </li>
                                         </ul>
                                     </div>
