@@ -23,13 +23,13 @@ class Post extends React.Component {
     }
 
     async componentDidMount() {
-        const hashnewsKey = localStorage.getItem('hashnewsKey');
+        const key = localStorage.getItem('mintPK');
       
-        if (!hashnewsKey) {
+        if (!key) {
             return;
         }
 
-        const secret = encoding.hex2ab(hashnewsKey);
+        const secret = encoding.hex2ab(key);
         const publicKey = encoding.toHexString(nacl.sign.keyPair.fromSecretKey(secret).publicKey).toUpperCase();
         const user = await ajaxUtils.loadUser(publicKey);
         this.setState({ user }, () => {

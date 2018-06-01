@@ -15,7 +15,7 @@ class CommentUpvote extends React.Component {
             return;
         }
 
-        const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
+        const secret = encoding.hex2ab(localStorage.getItem('mintPK'));
         const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);      
 
         let txBody = { 

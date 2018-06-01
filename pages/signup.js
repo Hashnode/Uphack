@@ -18,7 +18,7 @@ class Signup extends React.Component {
         let secretKey = encoding.toHexString(keys.secretKey).toUpperCase();
         this.publicKey.value = publicKey;
         this.secretKey.value = secretKey;
-        window.localStorage.setItem('hashnewsKey', secretKey);
+        window.localStorage.setItem('mintPK', secretKey);
     }
 
     signup = e => {
@@ -27,7 +27,7 @@ class Signup extends React.Component {
 
         let username = this.username.value,
             name = this.name.value,
-            secret = encoding.hex2ab(localStorage.getItem('hashnewsKey')),
+            secret = encoding.hex2ab(localStorage.getItem('mintPK')),
             publicKey = nacl.util.encodeBase64(encoding.hex2ab(this.publicKey.value)),
             id = new bson.ObjectID().toString();
 
@@ -59,7 +59,7 @@ class Signup extends React.Component {
         if (!pk) {
             return;
         }
-        window.localStorage.setItem("hashnewsKey", pk);        
+        window.localStorage.setItem("mintPK", pk);        
         window.location.href = "/";
     }
 
@@ -73,7 +73,7 @@ class Signup extends React.Component {
                         <div className="ask-wrapper">
                             <div className="single-field d-flex flex-row align-items-center">
                                 <div className="label">
-                                    user name
+                                    username
                                 </div>
                                 <div className="input-wrapper">
                                     <input type="text" ref={ c => { this.username = c }} />

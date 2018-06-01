@@ -17,7 +17,7 @@ class Nav extends React.Component {
 
     logout = e => {
         e.preventDefault();
-        window.localStorage.removeItem('hashnewsKey');
+        window.localStorage.removeItem('mintPK');
         window.location.reload();
     }
 

@@ -15,7 +15,7 @@ class WriteComment extends React.Component {
             return;
         }
 
-        const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
+        const secret = encoding.hex2ab(localStorage.getItem('mintPK'));
         const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);
         const id = new bson.ObjectID().toString();
         const content = this.content.value;
@@ -49,7 +49,7 @@ class WriteComment extends React.Component {
     }
 
     submitSubComment = () => {
-        const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
+        const secret = encoding.hex2ab(localStorage.getItem('mintPK'));
         const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);
         const id = new bson.ObjectID().toString();
 

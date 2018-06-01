@@ -12,13 +12,13 @@ class About extends React.Component {
     }
 
     async componentDidMount() {
-        const hashnewsKey = localStorage.getItem('hashnewsKey');
+        const key = localStorage.getItem('mintPK');
         
-        if (!hashnewsKey) {
+        if (!key) {
           return;
         }
   
-        const keyPair = nacl.sign.keyPair.fromSecretKey(encoding.hex2ab(hashnewsKey));
+        const keyPair = nacl.sign.keyPair.fromSecretKey(encoding.hex2ab(key));
         const publicKey = encoding.toHexString(keyPair.publicKey).toUpperCase();
   
         const user = await ajaxUtils.loadUser(publicKey);

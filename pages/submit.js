@@ -15,14 +15,14 @@ class Submit extends React.Component {
     }
 
     async componentDidMount() {
-        const hashnewsKey = localStorage.getItem('hashnewsKey');
+        const key = localStorage.getItem('mintPK');
       
-        if (!hashnewsKey) {
+        if (!key) {
             window.location.href = '/signup';
             return;
         }
         
-        const secret = encoding.hex2ab(hashnewsKey);
+        const secret = encoding.hex2ab(key);
         const publicKey = encoding.toHexString(nacl.sign.keyPair.fromSecretKey(secret).publicKey).toUpperCase();
         const user = await ajaxUtils.loadUser(publicKey);
         
@@ -47,7 +47,7 @@ class Submit extends React.Component {
             return;
         }
 
-        const secret = encoding.hex2ab(localStorage.getItem('hashnewsKey'));
+        const secret = encoding.hex2ab(localStorage.getItem('mintPK'));
         const publicKey = nacl.util.encodeBase64(nacl.sign.keyPair.fromSecretKey(secret).publicKey);
 
         const id = new bson.ObjectID().toString();

@@ -2,7 +2,7 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import Helmet from 'react-helmet';
 
-export default class Hashnews extends Document {
+export default class Uphack extends Document {
 
   constructor(props, context) {
       super(props, context);
