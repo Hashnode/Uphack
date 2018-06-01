@@ -15,6 +15,14 @@ export default class Hashnews extends Document {
   }
 
   render() {    
+    const gAnalytics = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-120201239-1');
+    `;
+
     return (
       <html>
         <Head>
@@ -34,7 +42,10 @@ export default class Hashnews extends Document {
             <script type="text/javascript" src="/static/js/nacl-util.min.js"></script>
             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120201239-1"></script>
+            <script type="text/javascript" dangerouslySetInnerHTML={{__html: gAnalytics}}></script>
             <NextScript />
+            
         </body>
       </html>
     )
