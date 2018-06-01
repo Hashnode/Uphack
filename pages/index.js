@@ -82,9 +82,9 @@ class Index extends React.Component {
                 <div className="widget">
                     <p>Uphack is an experimental news sharing application powered by Mint Blockchain.</p>
                     <ul className="list-unstyled">
-                      <li><a href="/about"><i className="mdi mdi-airballoon"></i> How this works</a></li>
-                      <li><a href="https://github.com/Hashnode/mint"><i className="mdi mdi-github-circle"></i> hashnode/mint (Mint Blockchain)</a></li>
-                      <li><a href="https://github.com/Hashnode/Uphack"><i className="mdi mdi-github-circle"></i> hashnode/uphack (codebase)</a></li>
+                      <li><a href="/about"><i className="mdi mdi-airballoon"></i> About Uphack and Mint</a></li>
+                      <li><a href="https://github.com/Hashnode/mint"><i className="mdi mdi-github-circle"></i> hashnode/mint</a></li>
+                      <li><a href="https://github.com/Hashnode/Uphack"><i className="mdi mdi-github-circle"></i> hashnode/uphack</a></li>
                     </ul>
                     <h3>Active validators</h3>
                     <ul className="list-unstyled validators">
@@ -97,8 +97,8 @@ class Index extends React.Component {
                     </ul>
                 </div>
                 <div className="widget mint-widget">
-                  <a href="#" className="mint-logo"><img src="/static/images/mint/logo.png"/></a>
-                  <p>This app is powered by <b>mint blockchain</b></p>
+                  <a href="https://github.com/Hashnode/mint" target="_blank" className="mint-logo"><img src="/static/images/mint/logo.png"/></a>
+                  <p>This app is powered by <a href="https://github.com/Hashnode/mint" target="_blank">mint blockchain</a></p>
                 </div>
               </div>
             </div>
