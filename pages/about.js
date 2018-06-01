@@ -45,7 +45,7 @@ class About extends React.Component {
                                 <p>We are running the network with 4 validators of our own. If you wish to play around and become a validator, please check out Mint documentation.</p>
                                 <h2>How can I contribute?</h2>
                                 <p>Both Uphack and Mint are open source projects. Fork and play around with the tools. If you find any bug or want to add new features, please send PRs to Uphack and Mint repos. We can't wait to see your contributions. :)</p>
-                                <h2>Btw, Who's building these?</h2>
+                                <h2>Btw, who's building these?</h2>
                                 <p>We are the creators of <a href="https://hashnode.com" target="_blank">Hashnode</a>, the friendly and inclusive dev community. We are currently playing around with the blockchain technology, and are passionate about building and supporting mint blockchain.</p>
                                 <p>
                                     <a className="hashnode-logo" href="https://hashnode.com"><img src="/static/images/hashnode-logo-full.jpg"/></a>

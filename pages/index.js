@@ -88,14 +88,17 @@ class Index extends React.Component {
                       <li><a href="https://github.com/Hashnode/mint"><i className="mdi mdi-github-circle"></i> hashnode/mint</a></li>
                       <li><a href="https://github.com/Hashnode/Uphack"><i className="mdi mdi-github-circle"></i> hashnode/uphack</a></li>
                     </ul>
+
+                    <ul className="list-unstyled">
+                      <li><a href="http://uphack.co:46657/status" target="_blank"><i className="mdi mdi-server"></i> Blockchain Status</a></li>
+                    </ul>
+
                     <h3>Active validators</h3>
                     <ul className="list-unstyled validators">
-                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/us.png"/>12.23.44.11</a></li>
-                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/cn.png"/>34.22.09.23</a></li>
-                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/fr.png"/>12.23.44.11</a></li>
-                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/na.png"/>34.22.09.23</a></li>
-                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/nu.png"/>12.23.44.11</a></li>
-                      <li><a href="#" className="d-flex align-items-center"><img src="/static/images/countries/rw.png"/>34.22.09.23</a></li>
+                      <li><a href="http://46.101.177.19:46657/status" target="_blank" className="d-flex align-items-center"><img src="/static/images/countries/de.png"/>46.101.177.19</a></li>
+                      <li><a href="http://206.189.125.145:46657/status" target="_blank" className="d-flex align-items-center"><img src="/static/images/countries/gb.png"/>206.189.125.145</a></li>
+                      <li><a href="http://192.241.232.63:46657/status" target="_blank" className="d-flex align-items-center"><img src="/static/images/countries/us.png"/>192.241.232.63</a></li>
+                      <li><a href="http://159.203.31.67:46657/status" target="_blank" className="d-flex align-items-center"><img src="/static/images/countries/ca.png"/>159.203.31.67</a></li>
                     </ul>
                 </div>
                 <div className="widget mint-widget">
