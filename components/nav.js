@@ -19,8 +19,8 @@ class Nav extends React.Component {
         return (
             <header>
                 <div className="container">
-                    <div className="d-flex flex-row justify-content-between align-items-center">
-                        <div className="d-flex flex-row align-items-center">
+                    <div className="d-flex flex-row flex-wrap justify-content-between align-items-center">
+                        <div className="d-flex flex-md-row flex-sm-column flex-wrap align-items-center header-left-side">
                             <h1 className="site-title">
                                 <a href="/"><img src="/static/images/logo.png"/></a>
                             </h1>
@@ -42,11 +42,11 @@ class Nav extends React.Component {
                                 </li>
                             </ul>
                         </div>
-                        <div className="d-flex flex-row align-items-center">
+                        <div className="d-flex flex-row align-items-center header-right-side">
                             <ul className="list-inline">
-                                <li className="list-inline-item">
-                                    <a href="#" className="d-flex flex-row align-items-center"><i className="mdi mdi-magnify"></i><span>Search</span></a>
-                                </li>
+                                {this.props.user && <li className="list-inline-item">
+                                    <a href="#" className="d-flex flex-row align-items-center"><i className="mdi mdi-logout"></i><span>Sign out</span></a>
+                                </li>}
                                 {!this.props.user && <li className="list-inline-item">
                                     <a href="/signup" className="d-flex flex-row align-items-center"><i className="mdi mdi-account-circle"></i><span>Login / Register</span></a>
                                 </li>}

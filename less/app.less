@@ -74,6 +74,7 @@ a {
 
 header {
     padding: 2rem 0 3rem;
+
     h1.site-title {
         font-size: 0;
         margin: 0 3rem 0 0;
@@ -122,6 +123,33 @@ header {
                 border-color: @dark;
             }
         }
+    }
+
+    @media (max-width: 425px){
+        h1.site-title{
+            margin: 0 3rem 1.5rem 1rem;
+        }
+
+        .header-left-side{
+            ul{
+                margin-bottom: .5rem;
+            }
+        }
+
+        .header-right-side{
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+            ul{
+                margin: 0;
+            }
+        }
+    }
+}
+
+.post-list-wrapper{
+    @media (max-width: 425px) {
+        margin-bottom: 2rem;
     }
 }
 
@@ -281,6 +309,11 @@ header {
 
 .ask-wrapper {
     width: 60%;
+
+    @media (max-width: 425px){
+        width: 100%;
+    }
+
     .single-field {
         margin-bottom: .8rem;
     }
@@ -296,10 +329,15 @@ header {
         min-height: 6rem;
     }
     .label {
-        width: 60px;
+        width: 100px;
         font-size: 1rem;
         color: #5D5D5D;
         font-weight: 600;
+        text-align: right;
+        padding-right: 1rem;
+        @media (max-width: 425px){
+            width: 60px;
+        }
     }
     .input-wrapper {
         width: calc(~"100% - 60px");
@@ -311,9 +349,12 @@ header {
         margin-bottom: .8rem;
     }
     .submit-wrapper {
-        margin-left: 60px;
         margin-top: 1rem;
         margin-bottom: 2rem;
+        padding-left: 96px;
+        @media (max-width: 425px){
+            padding-left: 60px;
+        }
     }
     .side-note {
         p {

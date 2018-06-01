@@ -75,10 +75,12 @@ class Index extends React.Component {
         <div className="post-list">
           <div className="container">
             <div className="row">
-              <div className="col-9">
-                {posts}
+              <div className="col-md-9">
+                <div className="post-list-wrapper">
+                  {posts}
+                </div>
               </div>
-              <div className="col-3">
+              <div className="col-md-3">
                 <div className="widget">
                     <p>Uphack is an experimental news sharing application powered by Mint Blockchain.</p>
                     <ul className="list-unstyled">
