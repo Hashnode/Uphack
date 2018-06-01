@@ -10,10 +10,6 @@ class PostPreview extends React.Component {
 
     extractHostname(url) {
 
-        if (!url) {
-            return "hashnode.com";
-        }
-
         var hostname;
         //find & remove protocol (http, ftp, etc.) and get hostname
 
@@ -42,8 +38,8 @@ class PostPreview extends React.Component {
                     </div>
                     <div className="content">
                         <div className="title d-flex flex-row align-items-end">
-                            <h3><a href={post.url} target="_blank">{post.title}</a></h3>
-                            {post.url && <span className="domain">(<a href={post.url} target="_blank">{this.extractHostname(post.url)}</a>)</span>}
+                            <h3><a href={post.url ? post.url : '/post?id=' + post._id}>{post.title}</a></h3>
+                            {post.url && <span className="domain">(<a href={post.url}>{this.extractHostname(post.url)}</a>)</span>}
                         </div>
                         <div className="meta">
                             <ul className="list-inline">

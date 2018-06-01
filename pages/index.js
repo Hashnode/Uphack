@@ -31,7 +31,7 @@ class Index extends React.Component {
 
       const user = await ajaxUtils.loadUser(publicKey);
       this.setState({ user }, () => {
-        this.getUpvoteStatus();
+        user && this.getUpvoteStatus();
       });
   }
 
