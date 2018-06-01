@@ -32,7 +32,7 @@ class About extends React.Component {
                 <Helmet title="About Uphack" />
                 <div className="container">
                     <div className="row justify-content-between">
-                        <div className="col-7">
+                        <div className="col-md-7">
                             <div className="page-content">
                                 <h1>What is Uphack?</h1>
                                 <img className="feat-img" src="/static/images/mint/mint-banner-white.jpg"/>

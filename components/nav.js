@@ -15,6 +15,12 @@ class Nav extends React.Component {
         this.state = {};
     }
 
+    logout = e => {
+        e.preventDefault();
+        window.localStorage.removeItem('hashnewsKey');
+        window.location.reload();
+    }
+
     render() {
         return (
             <header>
@@ -45,7 +51,7 @@ class Nav extends React.Component {
                         <div className="d-flex flex-row align-items-center header-right-side">
                             <ul className="list-inline">
                                 {this.props.user && <li className="list-inline-item">
-                                    <a href="#" className="d-flex flex-row align-items-center"><i className="mdi mdi-logout"></i><span>Sign out</span></a>
+                                    <a href="#" onClick={this.logout} className="d-flex flex-row align-items-center"><i className="mdi mdi-logout"></i><span>Sign out</span></a>
                                 </li>}
                                 {!this.props.user && <li className="list-inline-item">
                                     <a href="/signup" className="d-flex flex-row align-items-center"><i className="mdi mdi-account-circle"></i><span>Login / Register</span></a>
