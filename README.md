@@ -16,9 +16,10 @@ We created this demo to show how to build blockchain powered social apps easily.
 git clone https://github.com/Hashnode/Uphack
 cd Uphack
 yarn
-gulp less // make sure gulp is installed globally
+gulp less
 node server.js
 ```
+Make sure gulp is installed globally. This also requires a MongoDB server running in the background. 
 
 ## Become a Validator
 
