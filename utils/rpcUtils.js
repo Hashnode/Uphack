@@ -1,6 +1,7 @@
 import encoding from './encoding';
 
 export default async function makeRPC(txBody, publicKey, secret, cb) {
+  console.log("makeRPC txBody "+ txBody)
     let signature = nacl.sign.detached(nacl.util.decodeUTF8(JSON.stringify(txBody)), secret);
 
     let tx = {
