@@ -80,33 +80,16 @@ export default {
       return data.post;
     },
     getValidators: async () => {
-      // const response = await fetch(publicRuntimeConfig.baseUrl + '/ajax/post?id=' + id, {
-      //   method: 'GET',
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   },
-      //   credentials: 'same-origin'
-      // });
-      //
-      // const data = await response.json();
-      const validators = [
-   {
-      "_id":123,
-      "address":"addressssssss111",
-      "votes":1111
-   },
-   {
-      "_id":234,
-      "address":"addressssssss2222",
-      "votes":222
-   },
-   {
-      "_id":345,
-      "address":"addressssssss333",
-      "votes":333
-   }
-]
-      return validators;
+      const response = await fetch(publicRuntimeConfig.baseUrl + '/ajax/validators', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin'
+      });
+
+      const data = await response.json();
+      return data.validators;
     },
     getComment: async (id) => {
       const response = await fetch(publicRuntimeConfig.baseUrl + '/ajax/comment?id=' + id, {

@@ -8,7 +8,8 @@ class UpvoteValidator extends React.Component {
         this.state = {};
     }
 
-    upvote = (validatorId) => {
+    upvote = () => {
+      console.log("validator: " + this.props.validator)
       if (!this.props.user) {
           window.location.href = '/signup';
           return;
@@ -21,12 +22,12 @@ class UpvoteValidator extends React.Component {
           type: "upvoteValidator",
           entity: {
               stamp: new Date().getTime(),
-              // validator: validatorId,
+              validator: this.props.validator._id,
+              // TODO actually user not needed. We can fetch user from DB by quering pubKey. To be Removed!
               user: this.props.user._id,
           }
       }
 
-      console.log("validator "+ validatorId)
       console.log("txBody "+ txBody)
       console.log("txBody "+ JSON.stringify(txBody))
       console.log("publicKey "+ publicKey)
@@ -34,7 +35,7 @@ class UpvoteValidator extends React.Component {
       makeRPC(txBody, publicKey, secret);
 
       // this.props.upvoteCallback(this.props.validator._id, !this.props.validator.upvotedByCurrentUser);
-      this.props.upvoteCallback(validatorId);
+      this.props.upvoteCallback(this.props.validator._id);
     }
 
     render() {

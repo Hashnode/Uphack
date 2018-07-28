@@ -59,11 +59,11 @@ class Validators extends React.Component {
           <tr>
             <td>
               <div className="upvote-wrap">
-                <UpvoteValidator post={validator} user={this.state.user} upvoteCallback={this.upvoteCallback} />
+                <UpvoteValidator validator={validator} user={this.state.user} upvoteCallback={this.upvoteCallback} />
               </div>
             </td>
             <td align="center">{validator._id}</td>
-            <td><strong>{validator.address}</strong></td>
+            <td><strong>{validator.name}</strong></td>
             <td>{validator.votes}</td>
           </tr>
         )

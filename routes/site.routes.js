@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const dbUtil = require('../db'); 
+const dbUtil = require('../db');
 const async = require('async');
 const ObjectId = require('mongodb').ObjectId;
 const _  = require('lodash');
@@ -19,11 +19,11 @@ function unflatten( array, parent, tree ){
 
     if( !_.isEmpty( children )  ){
         if(!parent._id){
-           tree = children;   
+           tree = children;
         }else{
            parent['comments'] = children;
         }
-        _.each( children, function( child ){ unflatten( array, child ) } );                    
+        _.each( children, function( child ){ unflatten( array, child ) } );
     }
 
     return tree;
@@ -33,7 +33,28 @@ router.route('/ajax/fetch-user').get((req, res) => {
     const db = dbUtil.getDB();
 
     db.collection('users').findOne({publicKey: req.query.pk}, function(err, user){
-        res.json({ user: user});
+        res.json({ user: user });
+    });
+});
+
+router.route('/ajax/validators').get((req, res) => {
+    const db = dbUtil.getDB();
+    db.collection("validators").aggregate(
+      [
+        {
+           $project: {
+              name: 1,
+              votes: { $size: "$votes" }
+           }
+        },
+        {
+            $sort:
+              {votes : -1}
+        }
+      ]
+    ).toArray(function(err, result) {
+      if (err) throw err;
+      res.json({ validators : result })
     });
 });
 
@@ -56,7 +77,7 @@ router.route('/ajax/get-posts').get((req, res) => {
             db.collection('users').findOne({ _id: post.author }, function(err, user){
                 post.author = user;
                 cb(null, post);
-            });           
+            });
         }, (err, result) => {
             res.json({ posts: result });
         });
