@@ -38,6 +38,7 @@ router.route('/ajax/fetch-user').get((req, res) => {
 });
 
 router.route('/ajax/validators').get((req, res) => {
+    const numActiveValidators = 3
     const db = dbUtil.getDB();
     db.collection("validators").aggregate(
       [
@@ -54,7 +55,20 @@ router.route('/ajax/validators').get((req, res) => {
       ]
     ).toArray(function(err, result) {
       if (err) throw err;
-      res.json({ validators : result })
+
+      result.forEach((element, index) => {
+          element.rank = index + 1
+      })
+      console.log("here: ")
+      console.log(result)
+      // TODO looking at the fact that I'm starting to add knowledge about 'numActiveValidators' here
+      // and that knowledge is duplicted in ABCI backend app, I'm thinking we could consider
+      // moving this as a proper backend service exposing API to the fronted. Effectively,
+      // building single point of access for frontend (but I may be biased since I'm mainly a backend dev :P)
+      res.json({
+        active : result.slice(0, numActiveValidators),
+        standby: result.slice(numActiveValidators)
+      })
     });
 });
 

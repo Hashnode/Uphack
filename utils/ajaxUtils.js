@@ -89,7 +89,7 @@ export default {
       });
 
       const data = await response.json();
-      return data.validators;
+      return data;
     },
     getComment: async (id) => {
       const response = await fetch(publicRuntimeConfig.baseUrl + '/ajax/comment?id=' + id, {
