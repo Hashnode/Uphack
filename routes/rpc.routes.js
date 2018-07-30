@@ -20,9 +20,6 @@ router.route('/rpc').post((req, res) => {
     }
 
     request(options, function (error, response, body) {
-        console.log(error)
-        console.log(response)
-        console.log(body)
         res.json({ body: response.body });
     });
 });

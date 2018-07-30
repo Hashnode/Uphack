@@ -34,13 +34,11 @@ class UpvoteValidator extends React.Component {
       console.log("secret "+ secret)
       makeRPC(txBody, publicKey, secret);
 
-      // this.props.upvoteCallback(this.props.validator._id, !this.props.validator.upvotedByCurrentUser);
       this.props.upvoteCallback(this.props.validator._id);
     }
 
     render() {
         return (
-            // <button className={"upvote-btn " + (this.props.validator.upvotedByCurrentUser ? 'active' : '')} onClick={this.upvote}><i className={"mdi " + (this.props.validator.upvotedByCurrentUser ? 'mdi-arrow-up-drop-circle' : 'mdi-arrow-up-drop-circle-outline')}></i></button>
             <button className={"upvote-btn " + '' } onClick={this.upvote}><i className={"mdi " + (false ? 'mdi-arrow-up-drop-circle' : 'mdi-arrow-up-drop-circle-outline')}></i></button>
         )
     }

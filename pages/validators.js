@@ -42,10 +42,8 @@ class Validators extends React.Component {
     }
 
     upvoteCallback = (validatorId) => {
-        // const post = Object.assign({}, this.state.post);
-        // post.upvotedByCurrentUser = status;
-        // post.upvotes += (status ? 1 : -1);
-        // this.setState({ post: post });
+        // TODO should be refactored to update the state.
+        // ATM page needs to be refreshed to see updated results
     }
 
     showLoginPrompt = e => {
@@ -59,13 +57,8 @@ class Validators extends React.Component {
     }
 
     render() {
-    //   var createSquareFuncWithAdjustment = function(adjustment) {
-    // return function(x) { return (x * x) + adjustment; };
-    //   };
-
       const active = this.state.active.map((validator, index) => {
         return (
-          // <PostPreview post={post} user={this.state.user} key={post._id} upvoteCallback={this.upvoteCallback} />
           <tr>
             <td>
               <div className="upvote-wrap">
@@ -79,11 +72,8 @@ class Validators extends React.Component {
           </tr>
         )
       });
-      // const rank = active.length
       const standby = this.state.standby.map((validator, index) => {
         return (
-          // rank += 1
-          // <PostPreview post={post} user={this.state.user} key={post._id} upvoteCallback={this.upvoteCallback} />
           <tr>
             <td>
               <div className="upvote-wrap">
