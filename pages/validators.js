@@ -68,7 +68,7 @@ class Validators extends React.Component {
             <td align="center">{validator.rank}</td>
             <td align="center">{validator._id}</td>
             <td><strong>{validator.name}</strong></td>
-            <td>{validator.votes}</td>
+            <td>{validator.upvotes}</td>
           </tr>
         )
       });
@@ -83,7 +83,7 @@ class Validators extends React.Component {
             <td align="center">{validator.rank}</td>
             <td align="center">{validator._id}</td>
             <td><strong>{validator.name}</strong></td>
-            <td>{validator.votes}</td>
+            <td>{validator.upvotes}</td>
           </tr>
         )
       });

@@ -45,12 +45,12 @@ router.route('/ajax/validators').get((req, res) => {
         {
            $project: {
               name: 1,
-              votes: { $size: "$votes" }
+              upvotes: 1
            }
         },
         {
             $sort:
-              {votes : -1}
+              {upvotes : -1}
         }
       ]
     ).toArray(function(err, result) {
