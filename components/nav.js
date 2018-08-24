@@ -46,6 +46,9 @@ class Nav extends React.Component {
                                 <li className="list-inline-item">
                                     <a href="/submit">Submit</a>
                                 </li>
+                                <li className="list-inline-item">
+                                    <a href="/validators">Validators</a>
+                                </li>
                             </ul>
                         </div>
                         <div className="d-flex flex-row align-items-center header-right-side">

@@ -19,7 +19,7 @@ export default {
         else if (path === '/ask') {
           url += '?type=askUH';
         }
-        
+
         const response = await fetch(url, {
             method: 'GET',
             headers: {
@@ -27,7 +27,7 @@ export default {
             },
             credentials: 'same-origin'
           });
-        
+
           const data = await response.json();
           return data.posts;
     },
@@ -39,7 +39,7 @@ export default {
           },
           credentials: 'same-origin'
         });
-    
+
         const data = await response.json();
         return data.user;
     },
@@ -51,7 +51,7 @@ export default {
         },
         credentials: 'same-origin'
       });
-  
+
       const data = await response.json();
       return data.status;
     },
@@ -63,7 +63,7 @@ export default {
         },
         credentials: 'same-origin'
       });
-  
+
       const data = await response.json();
       return data.status;
     },
@@ -75,9 +75,21 @@ export default {
         },
         credentials: 'same-origin'
       });
-  
+
       const data = await response.json();
       return data.post;
+    },
+    getValidators: async () => {
+      const response = await fetch(publicRuntimeConfig.baseUrl + '/ajax/validators', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin'
+      });
+
+      const data = await response.json();
+      return data;
     },
     getComment: async (id) => {
       const response = await fetch(publicRuntimeConfig.baseUrl + '/ajax/comment?id=' + id, {
@@ -87,7 +99,7 @@ export default {
         },
         credentials: 'same-origin'
       });
-  
+
       const data = await response.json();
       return data.comment;
     }

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const dbUtil = require('../db'); 
+const dbUtil = require('../db');
 const async = require('async');
 const ObjectId = require('mongodb').ObjectId;
 const _  = require('lodash');
@@ -19,11 +19,11 @@ function unflatten( array, parent, tree ){
 
     if( !_.isEmpty( children )  ){
         if(!parent._id){
-           tree = children;   
+           tree = children;
         }else{
            parent['comments'] = children;
         }
-        _.each( children, function( child ){ unflatten( array, child ) } );                    
+        _.each( children, function( child ){ unflatten( array, child ) } );
     }
 
     return tree;
@@ -33,7 +33,42 @@ router.route('/ajax/fetch-user').get((req, res) => {
     const db = dbUtil.getDB();
 
     db.collection('users').findOne({publicKey: req.query.pk}, function(err, user){
-        res.json({ user: user});
+        res.json({ user: user });
+    });
+});
+
+router.route('/ajax/validators').get((req, res) => {
+    const numActiveValidators = 3
+    const db = dbUtil.getDB();
+    db.collection("validators").aggregate(
+      [
+        {
+           $project: {
+              name: 1,
+              upvotes: 1
+           }
+        },
+        {
+            $sort:
+              {upvotes : -1}
+        }
+      ]
+    ).toArray(function(err, result) {
+      if (err) throw err;
+
+      result.forEach((element, index) => {
+          element.rank = index + 1
+      })
+      console.log("here: ")
+      console.log(result)
+      // TODO looking at the fact that I'm starting to add knowledge about 'numActiveValidators' here
+      // and that knowledge is duplicted in ABCI backend app, I'm thinking we could consider
+      // moving this as a proper backend service exposing API to the fronted. Effectively,
+      // building single point of access for frontend (but I may be biased since I'm mainly a backend dev :P)
+      res.json({
+        active : result.slice(0, numActiveValidators),
+        standby: result.slice(numActiveValidators)
+      })
     });
 });
 
@@ -56,7 +91,7 @@ router.route('/ajax/get-posts').get((req, res) => {
             db.collection('users').findOne({ _id: post.author }, function(err, user){
                 post.author = user;
                 cb(null, post);
-            });           
+            });
         }, (err, result) => {
             res.json({ posts: result });
         });
