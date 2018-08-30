@@ -46,7 +46,8 @@ class Validators extends React.Component {
         type: "upvoteValidator",
         entity: {
           validatorID: vid,
-          stamp: new Date().getTime()
+          stamp: new Date().getTime(),
+          id: new bson.ObjectID().toString()
         }
       };
       makeRPC(txBody, publicKey, secret, async () => {
