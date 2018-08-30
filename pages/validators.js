@@ -47,7 +47,6 @@ class Validators extends React.Component {
         entity: {
           validatorID: vid,
           stamp: new Date().getTime(),
-          id: new bson.ObjectID().toString()
         }
       };
       makeRPC(txBody, publicKey, secret, async () => {
