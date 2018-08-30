@@ -19,7 +19,24 @@ class Validators extends React.Component {
         this.state = { validators: props.validators };
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+      const key = localStorage.getItem('mintPK');
+
+        if (!key) {
+            window.location.href = '/signup';
+            return;
+        }
+
+        const secret = encoding.hex2ab(key);
+        const publicKey = encoding.toHexString(nacl.sign.keyPair.fromSecretKey(secret).publicKey).toUpperCase();
+        const user = await ajaxUtils.loadUser(publicKey);
+
+        if (!user) {
+            window.location.href = '/signup';
+            return;
+        }
+
+        this.setState({ user });
     }
 
     upvoteValidator = (vid) => {
@@ -41,7 +58,7 @@ class Validators extends React.Component {
     render() {
         return (
             <div>
-                <Nav />
+                <Nav user={this.state.user} />
                 <Helmet title="Validators" />
                 <div className="post-list">
                   <div className="container">
