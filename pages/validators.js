@@ -45,7 +45,7 @@ class Validators extends React.Component {
       const txBody = {
         type: "upvoteValidator",
         entity: {
-          validatorID: vid,
+          vid: vid,
           stamp: new Date().getTime(),
         }
       };
@@ -66,7 +66,7 @@ class Validators extends React.Component {
                         <div className="single-post" key={v._id}>
                           <div className="d-flex flex-row align-items-top">
                             <div className="upvote-wrap">
-                              <ValidatorUpvote upvote={() => this.upvoteValidator(v._id)} />
+                              <ValidatorUpvote upvote={() => this.upvoteValidator(v.vid)} />
                             </div>
                             <div>
                               <p>Public Key: {v.pubKey}</p>
