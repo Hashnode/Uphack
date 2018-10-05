@@ -44,7 +44,10 @@ class Nav extends React.Component {
                                     <a href="/ask" className={this.props.path === '/ask' ? 'active': ''}>Ask</a>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="/submit">Submit</a>
+                                    <a href="/submit" className={this.props.path === '/submit' ? 'active': ''}>Submit</a>
+                                </li>
+                                <li className="list-inline-item">
+                                    <a href="/validators" className={this.props.path === '/validators' ? 'active': ''}>Validators</a>
                                 </li>
                             </ul>
                         </div>

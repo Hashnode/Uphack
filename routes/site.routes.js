@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const dbUtil = require('../db'); 
+const dbUtil = require('../db');
 const async = require('async');
 const ObjectId = require('mongodb').ObjectId;
 const _  = require('lodash');
@@ -19,11 +19,11 @@ function unflatten( array, parent, tree ){
 
     if( !_.isEmpty( children )  ){
         if(!parent._id){
-           tree = children;   
+           tree = children;
         }else{
            parent['comments'] = children;
         }
-        _.each( children, function( child ){ unflatten( array, child ) } );                    
+        _.each( children, function( child ){ unflatten( array, child ) } );
     }
 
     return tree;
@@ -56,7 +56,7 @@ router.route('/ajax/get-posts').get((req, res) => {
             db.collection('users').findOne({ _id: post.author }, function(err, user){
                 post.author = user;
                 cb(null, post);
-            });           
+            });
         }, (err, result) => {
             res.json({ posts: result });
         });
@@ -167,6 +167,14 @@ router.route('/ajax/get-comment-upvote-status').get((req, res) => {
         }, () => {
             res.json({ status: status });
         });
+    });
+});
+
+router.route('/ajax/validators').get((req, res) => {
+    const db = dbUtil.getDB();
+    const id = req.query.id;
+    db.collection('validators').find({}).toArray((err, docs) => {
+        res.json(docs);
     });
 });
 
